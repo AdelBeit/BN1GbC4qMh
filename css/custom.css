@@ -1,0 +1,10 @@
+.car-table th, .car-table td{
+    vertical-align: middle;
+}
+.car-table{
+    text-align: center;
+}
+.car-table img{
+    width:200px;
+    height: auto;
+}
