@@ -2,53 +2,53 @@
 	[
 		{
 			"comment": "prius",
-			"year": "2006",
-			"make": "Toyota",
-			"model": "Prius",
-			"milage": "135000",
-			"transmission": "auto",
-			"price": "6750",
-			"cylinders": "4"
+			"Year": "2006",
+			"Make": "Toyota",
+			"Model": "Prius",
+			"Milage": "135000",
+			"Transmission": "auto",
+			"Price": "6750",
+			"Cylinders": "4"
 		},
 		{
 			"comment":"accord",
-			"year": "2004",
-			"make": "honda",
-			"model": "accord",
-			"milage": "175000",
-			"trans": "auto",
-			"price": "2500",
-			"cylinders": "6"
+			"Year": "2004",
+			"Make": "honda",
+			"Model": "accord",
+			"Milage": "175000",
+			"Transmission": "auto",
+			"Price": "2500",
+			"Cylinders": "6"
 		},
 		{
 			"comment":"audi",
-			"year": "2005",
-			"make": "audi",
-			"model": "a6 quattro",
-			"milage": "79000",
-			"trans": "auto",
-			"price": "11000",
-			"cylinders": "6"
+			"Year": "2005",
+			"Make": "audi",
+			"Model": "a6 quattro",
+			"Milage": "79000",
+			"Transmission": "auto",
+			"Price": "11000",
+			"Cylinders": "6"
 		},
 		{
 			"comment": "camry",
-			"year": "1999",
-			"make": "toyota",
-			"model": "camry",
-			"milage": "300000",
-			"trans": "auto",
-			"price": "950",
-			"cylinders": "4"
+			"Year": "1999",
+			"Make": "toyota",
+			"Model": "camry",
+			"Milage": "300000",
+			"Transmission": "auto",
+			"Price": "950",
+			"Cylinders": "4"
 		},
 		{
 			"comment": "civic",
-			"year": "2006",
-			"make": "honda",
-			"model": "civic coupe",
-			"milage": "160000",
-			"trans": "auto",
-			"price": "3200",
-			"cylinders": "4"
+			"Year": "2006",
+			"Make": "honda",
+			"Model": "civic coupe",
+			"Milage": "160000",
+			"Transmission": "auto",
+			"Price": "3200",
+			"Cylinders": "4"
 		}
 	]
 }
