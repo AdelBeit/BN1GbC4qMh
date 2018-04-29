@@ -75,17 +75,58 @@
     <!-- Main Content -->
     <div class="container">
       <div class="main-content">
+
         <!-- car listings -->
         <div class="row" id="cars">
-          <div class="col-lg-8 col-md-10 mx-auto">
-            <table class="table table-secondary table-hover car-table table-responsive">
+          <div class="table-large col-sm-10 col-md-10 col-lg-10 mx-auto table-responsive">
+            <!-- <table class="table table-secondary table-hover car-table table-responsive"> -->
+            <table class="table table-secondary table-hover car-table-large">
+              <thead>
+                <tr>
+                  <th></th>
+                  <th>Year <arrow class="fa fa-chevron-down"></arrow></th>
+                  <th>Make <arrow class="fa fa-chevron-down"></arrow></th>
+                  <th>Model<arrow class="fa fa-chevron-down"></arrow></th>
+                  <th>Milage<arrow class="fa fa-chevron-down"></arrow></th>
+                  <th>Cylinder <arrow class="fa fa-chevron-down"></arrow></th>
+                  <th>Transmission<arrow class="fa fa-chevron-down"></arrow></th>
+                  <th>Price<arrow class="fa fa-chevron-down"></arrow></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><img src="img/cars/camry-2018-1.jpg"></td>
+                  <td>Toyota</td>
+                  <td>Camry</td>
+                  <td>2018</td>
+                  <td>140000</td>
+                  <td>Automatic</td>
+                  <td>$5000</td>
+                </tr>
+                <tr>
+                  <td><img src="img/cars/camaro-2018-1.jpg"></td>
+                  <td>Chevy</td>
+                  <td>Camaro</td>
+                  <td>2018</td>
+                  <td>90000</td>
+                  <td>Automatic</td>
+                  <td>$15000</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="table-small col-sm-10 col-md-10 col-lg-10 mx-auto table-responsive">
+            <!-- <table class="table table-secondary table-hover car-table table-responsive"> -->
+            <table class="table table-hover table-secondary car-table-small">
               <thead>
                 <tr>
                   <th scope="col"></th>
+                  <th scope="col">Year <arrow class="fa fa-chevron-down"></arrow></th>
                   <th scope="col">Make <arrow class="fa fa-chevron-down"></arrow></th>
                   <th scope="col">Model<arrow class="fa fa-chevron-down"></arrow></th>
-                  <th scope="col">Year<arrow class="fa fa-chevron-down"></arrow></th>
                   <th scope="col">Milage<arrow class="fa fa-chevron-down"></arrow></th>
+                  <th scope="col">Cylinder <arrow class="fa fa-chevron-down"></arrow></th>
                   <th scope="col">Transmission<arrow class="fa fa-chevron-down"></arrow></th>
                   <th scope="col">Price<arrow class="fa fa-chevron-down"></arrow></th>
                 </tr>
@@ -113,6 +154,7 @@
             </table>
           </div>
         </div>
+
         <!-- list of availalable services -->
         <div class="row" id="services">
           <div class="col-lg-8 col-md-10 mx-auto">
@@ -181,7 +223,12 @@
     <!-- Bootstrap core JavaScript -->
     <script src="vendor/jquery/jquery.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-	
+    
+    <script src="js/custom.js"></script>
+
+    <script type = "text/javascript" 
+         src = "https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js">
+      </script>
 
     <!-- Custom scripts for this template -->
     <script src="js/clean-blog.min.js"></script>
