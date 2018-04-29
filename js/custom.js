@@ -6,7 +6,7 @@ function fillTables(fname){
 
 function processJSON(jd){
     for (data of jd){
-        $(".car-table-large").mirandajs(data);
+        $("#addData").mirandajs(data);
     }
 }
 
