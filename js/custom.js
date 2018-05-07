@@ -1,7 +1,7 @@
 var dict = { 	"cars": 
 [
     {
-        "comment": "prius",
+        "Image": "prius",
         "Year": "2006",
         "Make": "Toyota",
         "Model": "Prius",
@@ -11,7 +11,7 @@ var dict = { 	"cars":
         "Price": "6750"
     },
     {
-        "comment":"accord",
+        "Image":"accord",
         "Year": "2004",
         "Make": "Honda",
         "Model": "Accord",
@@ -21,7 +21,7 @@ var dict = { 	"cars":
         "Price": "2500" 
     },
     {
-        "comment":"audi",
+        "Image":"audi",
         "Year": "2005",
         "Make": "Audi",
         "Model": "A6 Quattro",
@@ -31,7 +31,7 @@ var dict = { 	"cars":
         "Price": "11000" 
     },
     {
-        "comment": "camry",
+        "Image": "camry",
         "Year": "1999",
         "Make": "Toyota",
         "Model": "Camry",
@@ -41,7 +41,7 @@ var dict = { 	"cars":
         "Price": "950"
     },
     {
-        "comment": "civic",
+        "Image": "civic",
         "Year": "2006",
         "Make": "Honda",
         "Model": "Civic Coupe",
@@ -73,15 +73,28 @@ function processJSON(jd){
             tr = tbody.insertRow();
             for (col in car){
                 var info = car[col]
-                if (col != 'comment'){
-                    td = tr.insertCell();
+                td = tr.insertCell();
+                if (col != 'Image'){
                     info = (col != 'Price') ? info : '$' + info;
                     td.innerHTML = info;
+                }
+                else if (info != 'civic'){
+                    img = document.createElement("img");
+                    img.src = "img/cars/" + info + " thumb.jpg";
+                    console.log(img.src);
+                    td.appendChild(img);
                 }
             }
         }
     }
 }
+
+// gallery plugin
+$(document).on('click', '[data-toggle="lightbox"]', function(event) {
+    event.preventDefault();
+    $(this).ekkoLightbox();
+});
+
 
 // fillTables('cars');
 processJSON(dict.cars);
