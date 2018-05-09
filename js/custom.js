@@ -97,4 +97,4 @@ $(document).on('click', '[data-toggle="lightbox"]', function(event) {
 
 
 // fillTables('cars');
-processJSON(dict.cars);
+// processJSON(dict.cars);
