@@ -20,9 +20,9 @@
 
     <!-- Custom styles for this template -->
     <link href="css/clean-blog.css" rel="stylesheet">
-    <link href="css/lightbox.css" rel="stylesheet">
     <link href="css/custom.css" rel="stylesheet">
     <link href="css/ekko-lightbox.css" rel="stylesheet">
+    <link href="css/lightbox.css" rel="stylesheet">
 
   </head>
 
@@ -67,7 +67,7 @@
           <div class="col-lg-8 col-md-10 mx-auto">
             <div class="site-heading">
               <h1>Ideal Auto</h1>
-              <span class="subheading">Cars Made Affordable</span>
+              <span class="subheading"></span>
             </div>
           </div>
         </div>
@@ -77,11 +77,6 @@
     <!-- Main Content -->
     <div class="container">
       <div class="main-content">
-
-        <a href="https://unsplash.it/1200/768.jpg?image=250" data-toggle="lightbox">
-            <img src="https://unsplash.it/600.jpg?image=250" class="img-fluid">
-          </a>
-        <img src="https://unsplash.it/600.jpg?image=259" data-toggle="lightbox" data-remote="https://unsplash.it/1200/768.jpg?image=259" class="img-fluid col-6">
 
         <!-- car listings -->
         <div class="row" id="cars">
@@ -102,7 +97,8 @@
               </thead>
               <tbody>
                <tr>
-                  <td><img onclick="openModal();currentSlide(1);alert('hi');" class="hover-shadow" src="img/cars/camry thumb.jpg"/></td>
+                  <td><img onclick="openModal();currentSlide(1);" class="hover-shadow" src="img/cars/camry thumb.jpg"/></td>
+                  <td>2018</td>
                   <td>audi</td>
                   <td>Camry</td>
                   <td>2018</td>
@@ -110,56 +106,8 @@
                   <td>Automatic</td>
                   <td>$5000</td>
                 </tr>
-                <!-- <tr>
-                  <td><img src="img/cars/camaro-2018-1.jpg"></td>
-                  <td>Chevy</td>
-                  <td>Camaro</td>
-                  <td>2018</td>
-                  <td>90000</td>
-                  <td>Automatic</td>
-                  <td>$15000</td>
-                </tr> -->
               </tbody>
             </table>
-          </div>
-          
-          <div class="table-small col-sm-10 col-md-10 col-lg-10 mx-auto table-responsive">
-            <!-- <table class="table table-secondary table-hover car-table table-responsive"> -->
-              <table class="table table-hover table-secondary car-table-small">
-                <thead>
-                  <tr>
-                    <th scope="col"></th>
-                    <th scope="col">Year <arrow class="fa fa-chevron-down"></arrow></th>
-                    <th scope="col">Make <arrow class="fa fa-chevron-down"></arrow></th>
-                    <th scope="col">Model<arrow class="fa fa-chevron-down"></arrow></th>
-                    <th scope="col">Milage<arrow class="fa fa-chevron-down"></arrow></th>
-                    <th scope="col">Cylinder <arrow class="fa fa-chevron-down"></arrow></th>
-                    <th scope="col">Transmission<arrow class="fa fa-chevron-down"></arrow></th>
-                    <th scope="col">Price<arrow class="fa fa-chevron-down"></arrow></th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <!-- <tr>
-                    <td><img src="img/cars/camry-2018-1.jpg"></td>
-                    <td scope="col">audi</td>
-                    <td scope="col">Camry</td>
-                    <td scope="col">2018</td>
-                    <td scope="col">140000</td>
-                    <td scope="col">Automatic</td>
-                    <td scope="col">$5000</td>
-                  </tr>
-                  <tr>
-                    <td><img src="img/cars/camaro-2018-1.jpg"></td>
-                    <td scope="col">Chevy</td>
-                    <td scope="col">Camaro</td>
-                    <td scope="col">2018</td>
-                    <td scope="col">90000</td>
-                    <td scope="col">Automatic</td>
-                    <td scope="col">$15000</td>
-                  </tr> -->
-                </tbody>
-              </table>
-            </div>
           </div>
           
           <!-- list of availalable services -->
@@ -197,22 +145,47 @@
         <div class="modal-content">
           
         <div class="mySlides">
-          <div class="numbertext">1 / 4</div>
+          <div class="numbertext">1 / 9</div>
           <img src="img/cars/camry thumb.jpg" style="width:100%">
         </div>
 
         <div class="mySlides">
-          <div class="numbertext">2 / 4</div>
+          <div class="numbertext">2 / 9</div>
           <img src="img/cars/prius thumb.jpg" style="width:100%">
         </div>
 
         <div class="mySlides">
-          <div class="numbertext">3 / 4</div>
+          <div class="numbertext">3 / 9</div>
           <img src="img/cars/accord thumb.jpg" style="width:100%">
         </div>
 
         <div class="mySlides">
-          <div class="numbertext">4 / 4</div>
+          <div class="numbertext">4 / 9</div>
+          <img src="img/cars/audi thumb.jpg" style="width:100%">
+        </div>
+
+        <div class="mySlides">
+          <div class="numbertext">5 / 9</div>
+          <img src="img/cars/audi thumb.jpg" style="width:100%">
+        </div>
+
+        <div class="mySlides">
+          <div class="numbertext">6 / 9</div>
+          <img src="img/cars/audi thumb.jpg" style="width:100%">
+        </div>
+
+        <div class="mySlides">
+          <div class="numbertext">7 / 9</div>
+          <img src="img/cars/audi thumb.jpg" style="width:100%">
+        </div>
+
+        <div class="mySlides">
+          <div class="numbertext">8 / 9</div>
+          <img src="img/cars/audi thumb.jpg" style="width:100%">
+        </div>
+
+        <div class="mySlides">
+          <div class="numbertext">9 / 9</div>
           <img src="img/cars/audi thumb.jpg" style="width:100%">
         </div>
 
@@ -225,21 +198,39 @@
           <p id="caption"></p>
         </div>
 
-        <!-- Thumbnail image controls -->
-        <div class="column1">
-          <img class="thumbnails" src="img/cars/camry thumb.jpg" onclick="currentSlide(1)" alt="Nature">
-        </div>
+        <div class="thumbnails-container">
+          <!-- Thumbnail image controls -->
+          <div class="column">
+            <img class="thumbnails" src="img/cars/camry thumb.jpg" onclick="currentSlide(1)" alt="Nature">
+          </div>
 
-        <div class="column1">
-          <img class="thumbnails" src="img/cars/prius thumb.jpg" onclick="currentSlide(2)" alt="Trolltunga">
-        </div>
+          <div class="column">
+            <img class="thumbnails" src="img/cars/prius thumb.jpg" onclick="currentSlide(2)" alt="Trolltunga">
+          </div>
 
-        <div class="column1">
-          <img class="thumbnails" src="img/cars/accord thumb.jpg" onclick="currentSlide(3)" alt="Mountains">
-        </div>
+          <div class="column">
+            <img class="thumbnails" src="img/cars/accord thumb.jpg" onclick="currentSlide(3)" alt="Mountains">
+          </div>
 
-        <div class="column1">
-          <img class="thumbnails" src="img/cars/audi thumb.jpg" onclick="currentSlide(4)" alt="Lights">
+          <div class="column">
+            <img class="thumbnails" src="img/cars/prius thumb.jpg" onclick="currentSlide(4)" alt="Trolltunga">
+          </div>
+
+          <div class="column">
+            <img class="thumbnails" src="img/cars/accord thumb.jpg" onclick="currentSlide(5)" alt="Mountains">
+          </div>
+
+          <div class="column">
+            <img class="thumbnails" src="img/cars/prius thumb.jpg" onclick="currentSlide(6)" alt="Trolltunga">
+          </div>
+
+          <div class="column">
+            <img class="thumbnails" src="img/cars/accord thumb.jpg" onclick="currentSlide(7)" alt="Mountains">
+          </div>
+
+          <div class="column">
+            <img class="thumbnails" src="img/cars/audi thumb.jpg" onclick="currentSlide(8)" alt="Lights">
+          </div>
         </div>
       </div>
     </div>
@@ -284,7 +275,8 @@
     <!-- Bootstrap core JavaScript -->
     <script src="vendor/jquery/jquery.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-    
+
+
     <script src="js/custom.js"></script>
     <script src="js/lightbox.js"></script>
 
