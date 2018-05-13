@@ -1,15 +1,21 @@
+var modalOpen = false;
+
 // Open the Modal
 function openModal() {
-  document.getElementById('myModal').style.display = "block";
+  modalOpen = true;
+  document.getElementById('lightBoxModal').style.display = "block";
   document.body.style.overflow = "hidden";
   document.getElementById("mainNav").style.display = "none";
+  $(".table-large")[0].style.overflow = "hidden";
 }
 
 // Close the Modal
 function closeModal() {
-    document.getElementById('myModal').style.display = "none";
-    document.body.style.overflow = "scroll";
-    document.getElementById("mainNav").style.display = "initial";
+  modalOpen = false;
+  document.getElementById('lightBoxModal').style.display = "none";
+  document.body.style.overflow = "auto";
+  document.getElementById("mainNav").style.display = "initial";
+  $(".table-large")[0].style.overflow = "auto";
 }
 
 var slideIndex = 1;
@@ -30,8 +36,8 @@ function showSlides(n) {
   var slides = document.getElementsByClassName("mySlides");
   var dots = document.getElementsByClassName("thumbnails");
   var captionText = document.getElementById("caption");
-  if (n > slides.length) {slideIndex = 1}
-  if (n < 1) {slideIndex = slides.length}
+  if (n > slides.length-1) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length-1}
   for (i = 0; i < slides.length; i++) {
     slides[i].style.display = "none";
   }
@@ -43,11 +49,26 @@ function showSlides(n) {
 //   captionText.innerHTML = dots[slideIndex-1].alt;
 }
 
-// close modal when clicked outside image
-$("#myModal").on("click",function(e){
+// close modal if it's open 
+// check for clicks outside image
+$("#lightBoxModal").on("click",function(e){
     if (e.target === this){
         closeModal();
     }
 });
+// escape is pressed
+$(document).on("keydown",function(e){
+  switch(e.keyCode){
+    case 27: // esc
+      closeModal();
+      break;
+    case 37: // left
+      plusSlides(-1);
+      break;
+      case 39: // right
+      plusSlides(1);
+      break;
+    default:
+  }
 
-openModal();
+});

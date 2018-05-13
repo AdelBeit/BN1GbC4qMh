@@ -54,11 +54,6 @@ var dict = { 	"cars":
 }
 
 
-
-
-
-
-
 function fillTables(fname){
     $.getJSON(fname+'.json', function(jd) {
         processJSON(jd.cars);
@@ -80,8 +75,10 @@ function processJSON(jd){
                 }
                 else if (info != 'civic'){
                     img = document.createElement("img");
+                    img.setAttribute('onclick', 'openModal();currentSlide(1);');
+                    img.className += ' hover-shadow';
+                    img.className += ' table-thumbnails';
                     img.src = "img/cars/" + info + " thumb.jpg";
-                    console.log(img.src);
                     td.appendChild(img);
                 }
             }
@@ -89,12 +86,5 @@ function processJSON(jd){
     }
 }
 
-// gallery plugin
-$(document).on('click', '[data-toggle="lightbox"]', function(event) {
-    event.preventDefault();
-    $(this).ekkoLightbox();
-});
-
-
 // fillTables('cars');
-// processJSON(dict.cars);
+processJSON(dict.cars);
