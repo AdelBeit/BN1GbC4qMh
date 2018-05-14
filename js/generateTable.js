@@ -2,6 +2,9 @@ var dict = { 	"cars":
 [
     {
         "Image": "prius",
+        "OtherImages": [
+            
+        ],
         "Year": "2006",
         "Make": "Toyota",
         "Model": "Prius",
@@ -12,6 +15,9 @@ var dict = { 	"cars":
     },
     {
         "Image":"accord",
+        "OtherImages": [
+
+        ],
         "Year": "2004",
         "Make": "Honda",
         "Model": "Accord",
@@ -22,6 +28,9 @@ var dict = { 	"cars":
     },
     {
         "Image":"audi",
+        "OtherImages": [
+
+        ],
         "Year": "2005",
         "Make": "Audi",
         "Model": "A6 Quattro",
@@ -32,6 +41,9 @@ var dict = { 	"cars":
     },
     {
         "Image": "camry",
+        "OtherImages": [
+
+        ],
         "Year": "1999",
         "Make": "Toyota",
         "Model": "Camry",
@@ -39,16 +51,6 @@ var dict = { 	"cars":
         "Transmission": "Auto",
         "Cylinders": "4",
         "Price": "950"
-    },
-    {
-        "Image": "civic",
-        "Year": "2006",
-        "Make": "Honda",
-        "Model": "Civic Coupe",
-        "Milage": "160,000",
-        "Transmission": "Auto",
-        "Cylinders": "4",
-        "Price": "3200"
     }
 ]
 }
@@ -68,12 +70,12 @@ function processJSON(jd){
             tr = tbody.insertRow();
             for (col in car){
                 var info = car[col]
-                td = tr.insertCell();
-                if (col != 'Image'){
+                if (col != "OtherImages") td = tr.insertCell();
+                if (col != 'Image' && col != "OtherImages"){
                     info = (col != 'Price') ? info : '$' + info;
                     td.innerHTML = info;
                 }
-                else if (info != 'civic'){
+                else if (info != 'civic' && col != "OtherImages"){                    
                     img = document.createElement("img");
                     img.setAttribute('onclick', 'openModal();currentSlide(1);');
                     img.className += ' hover-shadow';
