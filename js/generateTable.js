@@ -51,6 +51,19 @@ var dict = { 	"cars":
         "Transmission": "Auto",
         "Cylinders": "4",
         "Price": "950"
+    },
+    {
+        "Image": "civic",
+        "OtherImages": [
+
+        ],
+        "Year": "2006",
+        "Make": "Honda",
+        "Model": "Civic Coupe",
+        "Milage": "160,000",
+        "Transmission": "Auto",
+        "Cylinders": "4",
+        "Price": "3200"
     }
 ]
 }
