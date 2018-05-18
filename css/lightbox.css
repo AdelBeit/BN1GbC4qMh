@@ -55,10 +55,9 @@
 .next {
     cursor: pointer;
     position: absolute;
-    top: 50%;
     width: auto;
+    margin-top:230px;
     padding: 16px;
-    margin-top: -50px;
     color: white;
     font-weight: bold;
     font-size: 20px;
@@ -67,6 +66,10 @@
     user-select: none;
     -webkit-user-select: none;
 }
+
+/* .next{
+    position: absolute;
+} */
 
 /* Position the "next button" to the right */
 
@@ -92,6 +95,7 @@
     position: absolute;
     top: 0;
 }
+
 
 /* Caption text */
 
@@ -128,5 +132,7 @@ img.hover-shadow {
 
 @media only screen and (max-width: 760px),
 (min-device-width: 760px) and (max-device-width: 1024px) {
-    
+    .prev,.next{
+        margin-top:150px;
+    }
 }
