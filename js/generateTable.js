@@ -51,53 +51,67 @@ var dict = { 	"cars":
         "Transmission": "Auto",
         "Cylinders": "4",
         "Price": "950"
-    },
-    {
-        "Image": "civic",
-        "OtherImages": [
-
-        ],
-        "Year": "2006",
-        "Make": "Honda",
-        "Model": "Civic Coupe",
-        "Milage": "160,000",
-        "Transmission": "Auto",
-        "Cylinders": "4",
-        "Price": "3200"
     }
+    // },
+    // {
+    //     "Image": "civic",
+    //     "OtherImages": [
+
+    //     ],
+    //     "Year": "2006",
+    //     "Make": "Honda",
+    //     "Model": "Civic Coupe",
+    //     "Milage": "160,000",
+    //     "Transmission": "Auto",
+    //     "Cylinders": "4",
+    //     "Price": "3200"
+    // }
 ]
 }
 
 
 function fillTables(fname){
-    $.getJSON(fname+'.json', function(jd) {
-        processJSON(jd.cars);
+    $.getJSON(fname+'.json', function(jsonData) {
+        processJSON(jsonData.cars);
     });
 }
 
-function processJSON(jd){
+// use the json dict to make two car tables
+function processJSON(jsonData){
     var tables = ['car-table-large','car-table-small'];
     for (tname of tables){
         var tbody = document.getElementsByClassName(tname)[0].children[1];
-        for (car of jd){
+        var lastrow;
+        var i = 1;
+        for (car of jsonData){
             tr = tbody.insertRow();
+            lastrow = tr;
+            // make each col in each row
             for (col in car){
-                var info = car[col]
+                var info = car[col];
+                // make a new col 
                 if (col != "OtherImages") td = tr.insertCell();
+                // make the cols for everything other than an image
                 if (col != 'Image' && col != "OtherImages"){
                     info = (col != 'Price') ? info : '$' + info;
                     td.innerHTML = info;
                 }
+                // make each image and insert into column
                 else if (info != 'civic' && col != "OtherImages"){                    
                     img = document.createElement("img");
-                    img.setAttribute('onclick', 'openModal();currentSlide(1);');
+                    img.setAttribute('onclick', `openModal();currentSlide(${i});`);
                     img.className += ' hover-shadow';
                     img.className += ' table-thumbnails';
                     img.src = "img/cars/" + info + " thumb.jpg";
                     td.appendChild(img);
                 }
             }
+            i++;
+            // make an empty row for small table
+            if (tname == 'car-table-small') td = tr.insertCell();
         }
+        // remove the last empty row 
+        if (tname == 'car-table-small') lastrow.deleteCell(8);
     }
 }
 

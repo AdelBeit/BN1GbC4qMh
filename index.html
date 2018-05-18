@@ -15,9 +15,8 @@
 
   <!-- Custom fonts for this template -->
   <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-  <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
-  <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800'
-    rel='stylesheet' type='text/css'>
+  <link href='vendor/google-fonts/fonts1.css' rel='stylesheet' type='text/css'>
+  <link href='vendor/google-fonts/fonts2.css' rel='stylesheet' type='text/css'>
 
   <!-- Custom styles for this template -->
   <link href="css/clean-blog.css" rel="stylesheet">
@@ -43,12 +42,12 @@
           <li class="nav-item">
             <a class="nav-link" href="#cars">Cars</a>
           </li>
-          <li class="nav-item">
+          <!-- <li class="nav-item">
             <a class="nav-link" href="#services">Services</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#uhaul">Uhaul</a>
-          </li>
+          </li> -->
           <li class="nav-item">
             <a class="nav-link" href="#about">About</a>
           </li>
@@ -78,11 +77,10 @@
   <!-- Main Content -->
   <div class="container">
     <div class="main-content">
-
+      
       <!-- car listings -->
       <div class="row" id="cars">
-        <div class="table-large col-sm-10 col-md-10 col-lg-10 mx-auto table-responsive">
-          <!-- <table class="table table-secondary table-hover car-table table-responsive"> -->
+        <div class="table-large col-sm-10 col-md-12 col-lg-12 mx-auto table-responsive">
           <table class="table table-secondary table-hover car-table-large">
             <thead>
               <tr>
@@ -111,7 +109,7 @@
               </tr>
             </thead>
             <tbody>
-              <tr>
+              <!-- <tr>
                 <td>
                   <img onclick="openModal();currentSlide(1);" class="table-thumbnails hover-shadow" src="img/cars/camry thumb.jpg"
                   />
@@ -123,7 +121,7 @@
                 <td>140000</td>
                 <td>Automatic</td>
                 <td>$5000</td>
-              </tr>
+              </tr> -->
             </tbody>
           </table>
         </div>
@@ -196,10 +194,14 @@
         <div class="col-lg-8 col-md-10 mx-auto">
         </div>
       </div>
+
+      <!-- <div class="col-lg-8 col-md-10 mx-auto col-sm-8 col-md-10 col-lg-8 mx-auto table-responsive"></div> -->
       <!-- about us section -->
       <div class="row" id="contact">
-        <div class="col-lg-8 col-md-10 mx-auto">
-
+        <div class="col-sm-8 col-md-10 col-lg-8 mx-auto">
+          <h2>Contact Us</h2>
+          <p>Email: idealivycar@gmail.com</p>
+          <p>Phone: (812) 340-1753</p>
         </div>
       </div>
 
@@ -216,61 +218,36 @@
     <div class="modal-content">
 
       <div class="mySlides">
-        <div class="numbertext">1 / 9</div>
-        <img src="img/cars/camry thumb.jpg" style="width:100%">
-      </div>
-
-      <div class="mySlides">
-        <div class="numbertext">2 / 9</div>
+        <div class="numbertext">1 / 4</div>
         <img src="img/cars/prius thumb.jpg" style="width:100%">
       </div>
 
       <div class="mySlides">
-        <div class="numbertext">3 / 9</div>
+        <div class="numbertext">2 / 4</div>
         <img src="img/cars/accord thumb.jpg" style="width:100%">
       </div>
 
       <div class="mySlides">
-        <div class="numbertext">4 / 9</div>
+        <div class="numbertext">3 / 4</div>
         <img src="img/cars/audi thumb.jpg" style="width:100%">
       </div>
 
       <div class="mySlides">
-        <div class="numbertext">5 / 9</div>
-        <img src="img/cars/audi thumb.jpg" style="width:100%">
-      </div>
-
-      <div class="mySlides">
-        <div class="numbertext">6 / 9</div>
-        <img src="img/cars/audi thumb.jpg" style="width:100%">
-      </div>
-
-      <div class="mySlides">
-        <div class="numbertext">7 / 9</div>
-        <img src="img/cars/audi thumb.jpg" style="width:100%">
-      </div>
-
-      <div class="mySlides">
-        <div class="numbertext">8 / 9</div>
-        <img src="img/cars/audi thumb.jpg" style="width:100%">
-      </div>
-
-      <div class="mySlides">
-        <div class="numbertext">9 / 9</div>
-        <img src="img/cars/audi thumb.jpg" style="width:100%">
+        <div class="numbertext">4 / 4</div>
+        <img src="img/cars/camry thumb.jpg" style="width:100%">
       </div>
 
       <!-- Next/previous controls -->
-      <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-      <a class="next" onclick="plusSlides(1)">&#10095;</a>
+      <!-- <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+      <a class="next" onclick="plusSlides(1)">&#10095;</a> -->
 
       <!-- Caption text -->
-      <div class="caption-container">
+      <!-- <div class="caption-container">
         <p id="caption"></p>
-      </div>
+      </div> -->
 
-      <div class="thumbnails-container">
-        <!-- Thumbnail image controls -->
+      <!-- <div class="thumbnails-container">
+        Thumbnail image controls
         <div class="column">
           <img class="thumbnails active" src="img/cars/camry thumb.jpg" onclick="currentSlide(1)" alt="Nature">
         </div>
@@ -302,7 +279,7 @@
         <div class="column">
           <img class="thumbnails" src="img/cars/audi thumb.jpg" onclick="currentSlide(8)" alt="Lights">
         </div>
-      </div>
+      </div> -->
     </div>
   </div>
 

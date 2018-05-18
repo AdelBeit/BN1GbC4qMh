@@ -1,7 +1,15 @@
+:root {
+  --color1: #999967;
+  --color2: #666666;
+  --color3: #CCCCCC;
+  --color4: #CCCC9A;
+}
+
 body {
   font-size: 20px;
   color: #212529;
   font-family: 'Lora', 'Times New Roman', serif;
+  background: linear-gradient(#e2e2e2,#d0d0d0c2);
 }
 
 p {
@@ -198,10 +206,6 @@ header.masthead .post-heading,
 header.masthead .site-heading {
   padding: 200px 0 150px;
   color: white;
-}
-
-body{
-  background: linear-gradient(#FEFEFE,#d3d3d3);
 }
 
 @media only screen and (min-width: 768px) {
