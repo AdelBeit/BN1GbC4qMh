@@ -11,7 +11,7 @@ var dict = { 	"cars":
         "Milage": "135,000",
         "Transmission": "Auto",
         "Cylinders": "4",
-        "Price": "6750"
+        "Price": "SOLD!"
     },
     {
         "Image":"accord",
@@ -24,7 +24,7 @@ var dict = { 	"cars":
         "Milage": "175,000",
         "Transmission": "Auto",
         "Cylinders": "6",
-        "Price": "2500" 
+        "Price": "SOLD!" 
     },
     {
         "Image":"audi",
@@ -37,7 +37,7 @@ var dict = { 	"cars":
         "Milage": "79,000",
         "Transmission": "Auto",
         "Cylinders": "6",
-        "Price": "11000" 
+        "Price": "$11000" 
     },
     {
         "Image": "camry",
@@ -50,7 +50,7 @@ var dict = { 	"cars":
         "Milage": "300,000",
         "Transmission": "Auto",
         "Cylinders": "4",
-        "Price": "950"
+        "Price": "SOLD!"
     }
     // },
     // {
@@ -93,7 +93,7 @@ function processJSON(jsonData){
                 if (col != "OtherImages") td = tr.insertCell();
                 // make the cols for everything other than an image
                 if (col != 'Image' && col != "OtherImages"){
-                    info = (col != 'Price') ? info : '$' + info;
+                    if (info[0] != "$" && col == "Price") td.setAttribute('class', ' sold');
                     td.innerHTML = info;
                 }
                 // make each image and insert into column
