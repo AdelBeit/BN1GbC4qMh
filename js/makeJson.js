@@ -73,11 +73,11 @@ var dict =
 
 const fs = require('fs');
 var dir = require('node-dir');
-var carsjson = require('../img/cars 2/prius/info.json')
 var direct = "./img/cars 2/prius/";
-console.log(carsjson.cars[0].Image);
-///////// read
-var readme = fs.readFileSync(direct+"info.json", "utf8");
+
+// ///////// read
+var carsjson = require('../img/cars 2/prius/info.json')
+// var readme = fs.readFileSync(direct+"info.json", "utf8");
 
 ///////// modify
 var newcar = {
@@ -95,11 +95,12 @@ var newcar = {
 };
 
 carsjson.cars.push(newcar);
-console.log(JSON.stringify(carsjson.cars, null, "\t"));
+
+// console.log(JSON.stringify(carsjson.cars, null, "\t"));
 
 ///////// write
-fs.writeFileSync(direct+"info.json", JSON.stringify(dict, null, "\t"));
+fs.writeFileSync("./cars.json", JSON.stringify(carsjson, null, "\t"));
 
 
-readme = fs.readFileSync(direct+"info.json", "utf8");
-// console.log(readme);
+readme = fs.readFileSync("./cars.json", "utf8");
+console.log(readme);
