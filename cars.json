@@ -43,17 +43,6 @@
 			"Transmission": "Auto",
 			"Cylinders": "4",
 			"Price": "SOLD!"
-		},
-		{
-			"Image": "prius",
-			"OtherImages": [],
-			"Year": "1111111111111",
-			"Make": "Toyota",
-			"Model": "Prius",
-			"Milage": "135,000",
-			"Transmission": "Auto",
-			"Cylinders": "4",
-			"Price": "$10000000"
 		}
 	]
 }

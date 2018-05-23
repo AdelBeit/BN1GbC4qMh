@@ -116,5 +116,5 @@ function processJSON(jsonData){
     }
 }
 
-fillTables('cars');
-// processJSON(dict.cars);
+// fillTables('cars');
+processJSON(dict.cars);
