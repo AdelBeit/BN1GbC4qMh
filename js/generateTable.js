@@ -1,72 +1,73 @@
-var dict = { 	"cars": 
-[
-    {
-        "Image": "prius",
-        "OtherImages": [
-            
-        ],
-        "Year": "2006",
-        "Make": "Toyota",
-        "Model": "Prius",
-        "Milage": "135,000",
-        "Transmission": "Auto",
-        "Cylinders": "4",
-        "Price": "SOLD!"
-    },
-    {
-        "Image":"accord",
-        "OtherImages": [
+var dict = 
+{ 	"cars": 
+    [
+        {
+            "Image": "prius",
+            "OtherImages": [
+                
+            ],
+            "Year": "2006",
+            "Make": "Toyota",
+            "Model": "Prius",
+            "Milage": "135,000",
+            "Transmission": "Auto",
+            "Cylinders": "4",
+            "Price": "SOLD!"
+        },
+        {
+            "Image":"accord",
+            "OtherImages": [
 
-        ],
-        "Year": "2004",
-        "Make": "Honda",
-        "Model": "Accord",
-        "Milage": "175,000",
-        "Transmission": "Auto",
-        "Cylinders": "6",
-        "Price": "SOLD!" 
-    },
-    {
-        "Image":"audi",
-        "OtherImages": [
+            ],
+            "Year": "2004",
+            "Make": "Honda",
+            "Model": "Accord",
+            "Milage": "175,000",
+            "Transmission": "Auto",
+            "Cylinders": "6",
+            "Price": "SOLD!" 
+        },
+        {
+            "Image":"audi",
+            "OtherImages": [
 
-        ],
-        "Year": "2005",
-        "Make": "Audi",
-        "Model": "A6 Quattro",
-        "Milage": "79,000",
-        "Transmission": "Auto",
-        "Cylinders": "6",
-        "Price": "$11000" 
-    },
-    {
-        "Image": "camry",
-        "OtherImages": [
+            ],
+            "Year": "2005",
+            "Make": "Audi",
+            "Model": "A6 Quattro",
+            "Milage": "79,000",
+            "Transmission": "Auto",
+            "Cylinders": "6",
+            "Price": "$11000" 
+        },
+        {
+            "Image": "camry",
+            "OtherImages": [
 
-        ],
-        "Year": "1999",
-        "Make": "Toyota",
-        "Model": "Camry",
-        "Milage": "300,000",
-        "Transmission": "Auto",
-        "Cylinders": "4",
-        "Price": "SOLD!"
-    }
-    // },
-    // {
-    //     "Image": "civic",
-    //     "OtherImages": [
+            ],
+            "Year": "1999",
+            "Make": "Toyota",
+            "Model": "Camry",
+            "Milage": "300,000",
+            "Transmission": "Auto",
+            "Cylinders": "4",
+            "Price": "SOLD!"
+        }
+        // },
+        // {
+        //     "Image": "civic",
+        //     "OtherImages": [
 
-    //     ],
-    //     "Year": "2006",
-    //     "Make": "Honda",
-    //     "Model": "Civic Coupe",
-    //     "Milage": "160,000",
-    //     "Transmission": "Auto",
-    //     "Cylinders": "4",
-    //     "Price": "3200"
-    // }
-]
+        //     ],
+        //     "Year": "2006",
+        //     "Make": "Honda",
+        //     "Model": "Civic Coupe",
+        //     "Milage": "160,000",
+        //     "Transmission": "Auto",
+        //     "Cylinders": "4",
+        //     "Price": "3200"
+        // }
+    ]
 }
 
 
@@ -93,8 +94,8 @@ function processJSON(jsonData){
                 if (col != "OtherImages") td = tr.insertCell();
                 // make the cols for everything other than an image
                 if (col != 'Image' && col != "OtherImages"){
-                    if (info[0] != "$" && col == "Price") td.setAttribute('class', ' sold');
-                    td.innerHTML = info;
+                    if (info[0] != "$" && col == "Price") td.innerHTML = "<span class='sold'>"+info+"</span>";
+                    else td.innerHTML = info;
                 }
                 // make each image and insert into column
                 else if (info != 'civic' && col != "OtherImages"){                    
