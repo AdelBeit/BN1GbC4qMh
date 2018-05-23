@@ -1,3 +1,11 @@
+.table{
+    background-color: #c6c9cc;
+}
+
+.table tbody tr:hover{
+    background-color: #d6d8db;
+}
+
 .car-table-large th, .car-table-large td{
     vertical-align: middle;
 }
