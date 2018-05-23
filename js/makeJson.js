@@ -94,9 +94,9 @@ var newcar = {
     "Price": "$10000000"
 };
 
-console.log(JSON.stringify(carsjson.cars, null, "\t"));
 carsjson.cars.push(newcar);
-document.write(JSON.stringify(carsjson.cars, null, "\t"));
+console.log(JSON.stringify(carsjson.cars, null, "\t"));
+
 ///////// write
 fs.writeFileSync(direct+"info.json", JSON.stringify(dict, null, "\t"));
 
