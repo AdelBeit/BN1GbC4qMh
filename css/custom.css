@@ -163,7 +163,11 @@ header.masthead {
     .car-table-small td { border:1px solid #ccc; }
     
     .soldText {
-        display: inline-block;
+        display: inline;
+    }
+    
+    .soldText:before {
+        content: ' ';
     }
     
 }
