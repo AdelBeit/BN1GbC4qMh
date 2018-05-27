@@ -162,10 +162,8 @@ header.masthead {
     .car-table-small td:nth-of-type(9) { background-color:rgb(222,222,222);border-left-color:rgba(0,0,0,0);border-right-color:rgba(0,0,0,0);}
     .car-table-small td { border:1px solid #ccc; }
     
-    /* header.masthead {
-        background-position-y: -20vh;
-        background-size: cover;
-        background-attachment: fixed;
-    } */
+    .soldText {
+        display: inline-block;
+    }
     
 }
