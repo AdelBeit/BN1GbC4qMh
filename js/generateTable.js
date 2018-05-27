@@ -14,7 +14,6 @@ var dict =
                 "Transmission": "Auto",
                 "Cylinders": "4"
             },
-            // "Price": "SOLD!"
             "Price": "$6750",
             "Sold": true
         },
@@ -31,7 +30,6 @@ var dict =
                 "Transmission": "Auto",
                 "Cylinders": "6"
             },
-            // "Price": "SOLD!"
             "Price": "$2500",
             "Sold": true
         },
@@ -51,40 +49,12 @@ var dict =
             "Price": "$8500",
             "Sold": false
         }
-        // {
-        //     "Image": "camry",
-        //     "OtherImages": [
-
-        //     ],
-        //     "Year": "1999",
-        //     "Make": "Toyota",
-        //     "Model": "Camry",
-        //     "Milage": "300,000",
-        //     "Transmission": "Auto",
-        //     "Cylinders": "4",
-        //     // "Price": "SOLD!"
-        //     "Price": "950"
-        // }
-        // },
-        // {
-        //     "Image": "civic",
-        //     "OtherImages": [
-
-        //     ],
-        //     "Year": "2006",
-        //     "Make": "Honda",
-        //     "Model": "Civic Coupe",
-        //     "Milage": "160,000",
-        //     "Transmission": "Auto",
-        //     "Cylinders": "4",
-        //     "Price": "3200"
-        // }
     ]
 }
 
 
 function fillTables(fname){
-    $.getJSON(fname+'.json', function(jsonData) {
+    $.getJSON('/cars/'+fname+'.json', function(jsonData) {
         processJSON(jsonData.cars);
     });
 }
@@ -126,5 +96,5 @@ function processJSON(jsonData){
     }
 }
 
-// fillTables('cars');
-processJSON(dict.cars);
+fillTables('cars');
+// processJSON(dict.cars);
