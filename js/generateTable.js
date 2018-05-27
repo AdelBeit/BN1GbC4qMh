@@ -54,7 +54,7 @@ var dict =
 
 
 function fillTables(fname){
-    $.getJSON('/cars/'+fname+'.json', function(jsonData) {
+    $.getJSON('/json/'+fname+'.json', function(jsonData) {
         processJSON(jsonData.cars);
     });
 }
