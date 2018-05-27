@@ -165,9 +165,4 @@ header.masthead {
     .soldText {
         display: inline;
     }
-    
-    .soldText:before {
-        content: ' ';
-    }
-    
 }

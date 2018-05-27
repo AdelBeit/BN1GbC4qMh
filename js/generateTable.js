@@ -85,7 +85,7 @@ function processJSON(jsonData){
                 td.innerHTML = info;
             }
             td = tr.insertCell();
-            if (car.Sold) td.innerHTML = "<span class='soldPrice'>"+car.Price+"</span><span class='soldText'>Sold!</span>";
+            if (car.Sold) td.innerHTML = "<span class='soldPrice'>"+car.Price+"</span><span class='soldText'> Sold!</span>";
             else td.innerHTML = car.Price;
             i++;
             // make an empty row for small table
@@ -96,5 +96,5 @@ function processJSON(jsonData){
     }
 }
 
-fillTables('cars');
-// processJSON(dict.cars);
+// fillTables('cars');
+processJSON(dict.cars);
