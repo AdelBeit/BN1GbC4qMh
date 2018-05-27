@@ -6,53 +6,65 @@ var dict =
             "OtherImages": [
                 
             ],
-            "Year": "2006",
-            "Make": "Toyota",
-            "Model": "Prius",
-            "Milage": "135,000",
-            "Transmission": "Auto",
-            "Cylinders": "4",
-            "Price": "SOLD!"
+            "Specs":{
+                "Year": "2006",
+                "Make": "Toyota",
+                "Model": "Prius",
+                "Milage": "135,000",
+                "Transmission": "Auto",
+                "Cylinders": "4"
+            },
+            // "Price": "SOLD!"
+            "Price": "$6750",
+            "Sold": true
         },
         {
             "Image":"accord",
             "OtherImages": [
-
+                
             ],
-            "Year": "2004",
-            "Make": "Honda",
-            "Model": "Accord",
-            "Milage": "175,000",
-            "Transmission": "Auto",
-            "Cylinders": "6",
-            "Price": "SOLD!" 
+            "Specs":{
+                "Year": "2004",
+                "Make": "Honda",
+                "Model": "Accord",
+                "Milage": "175,000",
+                "Transmission": "Auto",
+                "Cylinders": "6"
+            },
+            // "Price": "SOLD!"
+            "Price": "$2500",
+            "Sold": true
         },
         {
             "Image":"audi",
             "OtherImages": [
-
+                
             ],
-            "Year": "2005",
-            "Make": "Audi",
-            "Model": "A6 Quattro",
-            "Milage": "79,000",
-            "Transmission": "Auto",
-            "Cylinders": "6",
-            "Price": "$11000" 
-        },
-        {
-            "Image": "camry",
-            "OtherImages": [
-
-            ],
-            "Year": "1999",
-            "Make": "Toyota",
-            "Model": "Camry",
-            "Milage": "300,000",
-            "Transmission": "Auto",
-            "Cylinders": "4",
-            "Price": "SOLD!"
+            "Specs":{
+                "Year": "2005",
+                "Make": "Audi",
+                "Model": "A6 Quattro",
+                "Milage": "79,000",
+                "Transmission": "Auto",
+                "Cylinders": "6"
+            },
+            "Price": "$8500",
+            "Sold": false
         }
+        // {
+        //     "Image": "camry",
+        //     "OtherImages": [
+
+        //     ],
+        //     "Year": "1999",
+        //     "Make": "Toyota",
+        //     "Model": "Camry",
+        //     "Milage": "300,000",
+        //     "Transmission": "Auto",
+        //     "Cylinders": "4",
+        //     // "Price": "SOLD!"
+        //     "Price": "950"
+        // }
         // },
         // {
         //     "Image": "civic",
@@ -87,26 +99,24 @@ function processJSON(jsonData){
         for (car of jsonData){
             tr = tbody.insertRow();
             lastrow = tr;
+            // make a new col 
+            td = tr.insertCell();
+            // image col
+            img = document.createElement("img");
+            img.setAttribute('onclick', `openModal();currentSlide(${i});`);
+            img.className += ' hover-shadow';
+            img.className += ' table-thumbnails';
+            img.src = "img/cars/" + car.Image + " thumb.jpg";
+            td.appendChild(img);
             // make each col in each row
-            for (col in car){
-                var info = car[col];
-                // make a new col 
-                if (col != "OtherImages") td = tr.insertCell();
-                // make the cols for everything other than an image
-                if (col != 'Image' && col != "OtherImages"){
-                    if (info[0] != "$" && col == "Price") td.innerHTML = "<span class='sold'>"+info+"</span>";
-                    else td.innerHTML = info;
-                }
-                // make each image and insert into column
-                else if (info != 'civic' && col != "OtherImages"){                    
-                    img = document.createElement("img");
-                    img.setAttribute('onclick', `openModal();currentSlide(${i});`);
-                    img.className += ' hover-shadow';
-                    img.className += ' table-thumbnails';
-                    img.src = "img/cars/" + info + " thumb.jpg";
-                    td.appendChild(img);
-                }
+            for (col in car.Specs){
+                var info = car.Specs[col];
+                td = tr.insertCell();
+                td.innerHTML = info;
             }
+            td = tr.insertCell();
+            if (car.Sold) td.innerHTML = "<span class='soldPrice'>"+car.Price+"</span><span class='soldText'>Sold!</span>";
+            else td.innerHTML = car.Price;
             i++;
             // make an empty row for small table
             if (tname == 'car-table-small') td = tr.insertCell();

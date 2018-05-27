@@ -36,9 +36,16 @@ h2{
     margin:0;
 }
 
-.sold {
+.soldPrice {
     color:red;
     font-weight: bold;
+    text-decoration: line-through;
+}
+
+.soldText {
+    color:red;
+    font-weight: bold;
+    display:block;
 }
 
 /* about section */
