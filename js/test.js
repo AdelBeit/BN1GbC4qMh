@@ -1,24 +1,33 @@
+
+// read file async
+// var fs = require('fs');
+
+// fs.readFile("DATA", 'utf8', function(err, contents){
+//     console.log(contents);
+// });
+
+// console.log('after calling readFile');
+
+// read file sync
 var fs = require('fs');
 
-// fs.unlink('writeMe.txt');
+var contents = fs.readFileSync('DATA', 'utf8');
+console.log(contents);
+console.log('after calling readFile');
 
-// fs.readFile('./img/cars/prius/info.txt','utf8', function(err,data){
-//     fs.writeFile('writeMe.txt', data);
+// web server
+// var http = require('http');
+// var port = 8080;
+
+// var s = http.createServer(function(request, response){
+//     response.writeHead(200);
+//     response.write("hello world");
+//     response.end();
 // });
 
-// console.log('test');
+// s.listen(port);
+ 
+// console.log("Listening on http://127.0.0.1:" + port + "/");
 
-// fs.writeFile('readMe.txt','you cant read!');
 
-// fs.mkdirSync('stuff');
-
-// fs.mkdir('stuff',function(){
-//     fs.readFile('readMe.txt','utf8', function(err,data){
-//         fs.writeFile('./stuff/writeMe.txt', data);
-//     });
-
-// });
-
-fs.unlink('./stuff/writeMe.txt', function(){
-    fs.rmdir('stuff');
-});
+//https://code-maven.com/argv-raw-command-line-arguments-in-nodejs
