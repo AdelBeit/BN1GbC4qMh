@@ -17,28 +17,43 @@ var direct = "./img/cars 2/prius/";
 // function fetchInfo(err,filedata) {
 //     if (err) throw err;
 
-//     // console.log(filedata);
-//     var k = {'ok':23,'whatnow':44};
-//     fs.appendFile(filedata, k, 'utf8', (err) => {
+const fs = require('fs');
+var dir = require('node-dir');
+var direct = "./img/cars 2/";
+
+//////// get list of files 
+
+fs.readdirSync(direct).forEach(file => {
+    console.log(file);
+})
+
+
+// // ///////// read
+// var carsjson = require('../img/cars 2/prius/info.json')
+// // var readme = fs.readFileSync(direct+"info.json", "utf8");
+
+// ///////// modify
+// var newcar = {
+//     "Image": "prius",
+//     "OtherImages": [
         
-//         fs.close(filedata, (err) => {
-//             if (err) throw err;
-//         });
-//         if (err) throw err;
-//     });
-// }
+//     ],
+//     "Year": "1111111111111",
+//     "Make": "Toyota",
+//     "Model": "Prius",
+//     "Milage": "135,000",
+//     "Transmission": "Auto",
+//     "Cylinders": "4",
+//     "Price": "$10000000"
+// };
 
-// console.log(fs.readdirSync('c:'));
+// carsjson.cars.push(newcar);
 
-// var fpaths = dir.files("./img/cars 2/", {sync:true});
-// console.log(fpaths);
+// // console.log(JSON.stringify(carsjson.cars, null, "\t"));
 
-
-// read and write
-
-///////// read
-var readme = fs.readFileSync(direct+"info.txt", "utf8");
-console.log(readme);
+// ///////// write
+// fs.writeFileSync("./cars.json", JSON.stringify(carsjson, null, "\t"));
 
 
-///////// write
+// readme = fs.readFileSync("./cars.json", "utf8");
+// console.log(readme);
