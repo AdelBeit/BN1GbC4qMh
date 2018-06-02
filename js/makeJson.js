@@ -54,6 +54,6 @@ fs.readdirSync(direct).forEach(file => {
 // ///////// write
 // fs.writeFileSync("./cars.json", JSON.stringify(carsjson, null, "\t"));
 
-
 // readme = fs.readFileSync("./cars.json", "utf8");
 // console.log(readme);
+
