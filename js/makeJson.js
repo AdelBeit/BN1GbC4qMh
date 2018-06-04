@@ -1,7 +1,55 @@
-const fs = require('fs');
+var fs = require('fs');
 var dir = require('node-dir');
 
-var direct = "./img/cars 2/prius/";
+// printing function
+var print = function(args){
+    console.log(args);
+}
+
+// are there args?
+if (process.argv.length <= 2){
+    console.log("Usage: " + __filename + " path/to");
+    process.exit(-1);
+}
+
+// get path from args
+var path = '.';
+path = process.argv[2];
+
+// get list of cars
+var carlist = fs.readdirSync(path);
+
+
+carlist = carlist.filter(e => !e.includes('.json'));
+
+print(carlist);
+// console.log(dirlist);
+
+for (i = 0; i < carlist.length; i++){
+    var p2 = path+carlist[i];
+    print(p2);
+    var files = dir.files(p2,{sync:true});
+    print(files);
+}
+
+
+
+// console.log('files');
+// console.log(files);
+
+
+
+
+
+
+
+
+
+
+// const fs = require('fs');
+// var dir = require('node-dir');
+
+// var direct = "./img/cars 2/prius/";
 
 // fs = dir.files("./img/cars/", function(err, files) {
 //   if (err) throw err;
@@ -17,15 +65,15 @@ var direct = "./img/cars 2/prius/";
 // function fetchInfo(err,filedata) {
 //     if (err) throw err;
 
-const fs = require('fs');
-var dir = require('node-dir');
-var direct = "./img/cars 2/";
+// const fs = require('fs');
+// var dir = require('node-dir');
+// var direct = "./img/cars 2/";
 
 //////// get list of files 
 
-fs.readdirSync(direct).forEach(file => {
-    console.log(file);
-})
+// fs.readdirSync(direct).forEach(file => {
+//     console.log(file);
+// })
 
 
 // // ///////// read
