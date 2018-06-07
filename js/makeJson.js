@@ -1,7 +1,7 @@
 var fs = require('fs');
 var dir = require('node-dir');
+var nPath = require('path');
 
-// printing function
 var print = function(args){
     console.log(args);
 }
@@ -18,39 +18,48 @@ path = process.argv[2];
 
 // get list of cars
 var carlist = fs.readdirSync(path);
-
 carlist = carlist.filter(e => !e.includes('.json'));
 
-print(carlist);
-// console.log(dirlist);
-
-var cardict = [];
-
+// make the car json 
+var carDict = [];
 for (i = 0; i < carlist.length; i++){
     var car = carlist[i];
-    var p2 = path+car;
-    // print(p2);
-    var files = dir.files(p2,{sync:true});
+    var fullPath = path+car;
+    var files = dir.files(fullPath,{sync:true});
+
+    var carInfoPath = String(files.filter(e => e.includes('json')));
+    carInfoPath = nPath.parse(carInfoPath);
+    carInfoPath = nPath.join(carInfoPath.dir,carInfoPath.name);
+    carInfoPath = carInfoPath.replace(/\\/g,"/");
+    var carInfo = require(carInfoPath);
 
     files = files.map(s => s = s.substring(path.length-1,s.length));
+    var thumbnail = files.filter(e => e.includes('thumb'));
+    var otherImgs = files.filter(e => !e.includes('json'));
 
-    // print(files);
+    var newCar = {
+        "Thumb": thumbnail,
+        "OtherImages":otherImgs,
+        "Year": carInfo.Year,
+        "Make": carInfo.Make,
+        "Model": carInfo.Model,
+        "Milage": carInfo.Milage,
+        "Transmission": carInfo.Transmission,
+        "Cylinders": carInfo.Cylinders,
+        "Price": carInfo.Price
+    };
 
-    cardict.push({
-        "Image": car,
-        "OtherImages":files,
-        "Year": "2006",
-        "Make": "Toyota",
-        "Model": "Prius",
-        "Milage": "135,000",
-        "Transmission": "Auto",
-        "Cylinders": "4",
-        "Price": "6750"
-    });
-
-    print(cardict);
-
+    carDict.push(newCar);
 }
+
+print(carDict);
+
+// export cars to json file
+var carsInfoPath = "../img/cars 2/info.json";
+fs.writeFileSync(carsInfoPath, JSON.stringify(carDict, null, "\t"));
+
+readme = fs.readFileSync(carsInfoPath, "utf8");
+print(readme);
 
 // for (i = 0; i < files.length; i++){
 //     var file = files[i];
