@@ -1,77 +1,55 @@
-[
-	{
-		"Thumb": [
-			"\\accord\\thumb.jpg"
-		],
-		"OtherImages": [
-			"\\accord\\accord (2).jpg",
-			"\\accord\\accord (4).jpg",
-			"\\accord\\accord.jpg",
-			"\\accord\\thumb.jpg"
-		],
-		"Year": "2004",
-		"Make": "Honda",
-		"Model": "Accord",
-		"Milage": "175,000",
-		"Transmission": "Auto",
-		"Cylinders": "6",
-		"Price": "SOLD!"
-	},
-	{
-		"Thumb": [
-			"\\audi\\thumb.jpg"
-		],
-		"OtherImages": [
-			"\\audi\\audi (2).jpg",
-			"\\audi\\audi (3).jpg",
-			"\\audi\\audi (4).jpg",
-			"\\audi\\thumb.jpg"
-		],
-		"Year": "2005",
-		"Make": "Audi",
-		"Model": "A6 Quattro",
-		"Milage": "79,000",
-		"Transmission": "Auto",
-		"Cylinders": "6",
-		"Price": "$11000"
-	},
-	{
-		"Thumb": [
-			"\\camry\\thumb.jpg"
-		],
-		"OtherImages": [
-			"\\camry\\camry (2).jpg",
-			"\\camry\\camry (3).jpg",
-			"\\camry\\camry (5).jpg",
-			"\\camry\\camry (6).jpg",
-			"\\camry\\camry (7).jpg",
-			"\\camry\\camry.jpg",
-			"\\camry\\thumb.jpg"
-		],
-		"Year": "1999",
-		"Make": "Toyota",
-		"Model": "Camry",
-		"Milage": "300,000",
-		"Transmission": "Auto",
-		"Cylinders": "4",
-		"Price": "SOLD!"
-	},
-	{
-		"Thumb": [
-			"\\prius\\thumb.jpg"
-		],
-		"OtherImages": [
-			"\\prius\\prius (2).jpg",
-			"\\prius\\prius (4).jpg",
-			"\\prius\\prius.jpg",
-			"\\prius\\thumb.jpg"
-		],
-		"Year": "2006",
-		"Make": "Toyota",
-		"Model": "Prius",
-		"Milage": "135,000",
-		"Transmission": "Auto",
-		"Cylinders": "4",
-		"Price": "SOLD!"
-	}
-]
+{ 	"cars": 
+	[
+		{
+			"comment": "prius",
+			"year": "2006",
+			"make": "Toyota",
+			"model": "Prius",
+			"milage": "135000",
+			"transmission": "auto",
+			"price": "6750",
+			"cylinders": "4"
+		},
+		{
+			"comment":"accord",
+			"year": "2004",
+			"make": "honda",
+			"model": "accord",
+			"milage": "175000",
+			"trans": "auto",
+			"price": "2500",
+			"cylinders": "6"
+		},
+		{
+			"comment":"audi",
+			"year": "2005",
+			"make": "audi",
+			"model": "a6 quattro",
+			"milage": "79000",
+			"trans": "auto",
+			"price": "11000",
+			"cylinders": "6"
+		},
+		{
+			"comment": "camry",
+			"year": "1999",
+			"make": "toyota",
+			"model": "camry",
+			"milage": "300000",
+			"trans": "auto",
+			"price": "950",
+			"cylinders": "4"
+		},
+		{
+			"comment": "civic",
+			"year": "2006",
+			"make": "honda",
+			"model": "civic coupe",
+			"milage": "160000",
+			"trans": "auto",
+			"price": "3200",
+			"cylinders": "4"
+		}
+	]
+}
+
