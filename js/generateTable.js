@@ -1,61 +1,60 @@
-var dict = 
-{ 	"cars": 
-    [
-        {
-            "Image": "prius",
-            "OtherImages": [
-                
-            ],
-            "Specs":{
-                "Year": "2006",
-                "Make": "Toyota",
-                "Model": "Prius",
-                "Milage": "135,000",
-                "Transmission": "Auto",
-                "Cylinders": "4"
-            },
-            "Price": "$6750",
-            "Sold": true
+var dict = [
+    {
+        "Image": "prius",
+        "OtherImages": [
+            
+        ],
+        "Specs":{
+            "Year": "2006",
+            "Make": "Toyota",
+            "Model": "Prius",
+            "Milage": "135,000",
+            "Transmission": "Auto",
+            "Cylinders": "4"
         },
-        {
-            "Image":"accord",
-            "OtherImages": [
-                
-            ],
-            "Specs":{
-                "Year": "2004",
-                "Make": "Honda",
-                "Model": "Accord",
-                "Milage": "175,000",
-                "Transmission": "Auto",
-                "Cylinders": "6"
-            },
-            "Price": "$2500",
-            "Sold": true
+        "Price": "$6750",
+        "Sold": true
+    },
+    {
+        "Image":"accord",
+        "OtherImages": [
+            
+        ],
+        "Specs":{
+            "Year": "2004",
+            "Make": "Honda",
+            "Model": "Accord",
+            "Milage": "175,000",
+            "Transmission": "Auto",
+            "Cylinders": "6"
         },
-        {
-            "Image":"audi",
-            "OtherImages": [
-                
-            ],
-            "Specs":{
-                "Year": "2005",
-                "Make": "Audi",
-                "Model": "A6 Quattro",
-                "Milage": "79,000",
-                "Transmission": "Auto",
-                "Cylinders": "6"
-            },
-            "Price": "$8500",
-            "Sold": false
-        }
-    ]
-}
+        "Price": "$2500",
+        "Sold": true
+    },
+    {
+        "Image":"audi",
+        "OtherImages": [
+            
+        ],
+        "Specs":{
+            "Year": "2005",
+            "Make": "Audi",
+            "Model": "A6 Quattro",
+            "Milage": "79,000",
+            "Transmission": "Auto",
+            "Cylinders": "6"
+        },
+        "Price": "$8500",
+        "Sold": false
+    }
+]
 
 
 function fillTables(fname){
-    $.getJSON('/json/'+fname+'.json', function(jsonData) {
-        processJSON(jsonData.cars);
+    var path ='/json/'+fname+'.json'; 
+    path ='/img/cars 2/'+fname+'.json'; 
+    $.getJSON(path, function(jsonData) {
+        processJSON(jsonData);
     });
 }
 
@@ -97,4 +96,7 @@ function processJSON(jsonData){
 }
 
 // fillTables('cars');
-processJSON(dict.cars);
+fillTables('info');
+
+
+// processJSON(dict.cars);
