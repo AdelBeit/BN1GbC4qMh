@@ -99,4 +99,4 @@ function processJSON(jsonData){
 fillTables('info');
 
 
-// processJSON(dict);
+// processJSON(dict.cars);
