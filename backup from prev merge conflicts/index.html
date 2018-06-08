@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Ideal Auto</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom fonts for this template -->
+  <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  <link href='vendor/google-fonts/fonts1.css' rel='stylesheet' type='text/css'>
+  <link href='vendor/google-fonts/fonts2.css' rel='stylesheet' type='text/css'>
+
+  <!-- Custom styles for this template -->
+  <link href="css/clean-blog.css" rel="stylesheet">
+  <link href="css/custom.css" rel="stylesheet">
+  <link href="css/lightbox.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+    <div class="container">
+      <!-- LOGO GOES HERE *********** NEED LOGO ************* -->
+      <a class="navbar-brand" href="#"></a>
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+        aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        Menu
+        <i class="fa fa-bars"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="#cars">Cars</a>
+          </li>
+          <!-- <li class="nav-item">
+            <a class="nav-link" href="#services">Services</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#uhaul">Uhaul</a>
+          </li> -->
+          <li class="nav-item">
+            <a class="nav-link" href="#about">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#contact">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Page Header -->
+  <header class="masthead" style="background-image: url('img/cover.jpg')">
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <div class="site-heading">
+            <h1>Ideal Auto</h1>
+            <span class="subheading"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <div class="container">
+    <div class="main-content">
+      
+      <!-- car listings -->
+      <div class="row" id="cars">
+        <div class="table-large col-sm-10 col-md-12 col-lg-12 mx-auto table-responsive">
+          <table class="table table-secondary table-hover car-table-large">
+            <thead>
+              <tr>
+                <th></th>
+                <th>Year
+                  <arrow class="fa fa-chevron-down"></arrow>
+                </th>
+                <th>Make
+                  <arrow class="fa fa-chevron-down"></arrow>
+                </th>
+                <th>Model
+                  <arrow class="fa fa-chevron-down"></arrow>
+                </th>
+                <th>Milage
+                  <arrow class="fa fa-chevron-down"></arrow>
+                </th>
+                <th>Transmission
+                  <arrow class="fa fa-chevron-down"></arrow>
+                </th>
+                <th>Cylinder
+                  <arrow class="fa fa-chevron-down"></arrow>
+                </th>
+                <th>Price
+                  <arrow class="fa fa-chevron-down"></arrow>
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- <tr>
+                <td>
+                  <img onclick="openModal();currentSlide(1);" class="table-thumbnails hover-shadow" src="img/cars/camry thumb.jpg"
+                  />
+                </td>
+                <td>2018</td>
+                <td>audi</td>
+                <td>Camry</td>
+                <td>2018</td>
+                <td>140000</td>
+                <td>Automatic</td>
+                <td>$5000</td>
+              </tr> -->
+            </tbody>
+          </table>
+        </div>
+
+        <div class="table-small col-sm-10 col-md-10 col-lg-10 mx-auto table-responsive">
+          <!-- <table class="table table-secondary table-hover car-table table-responsive"> -->
+          <table class="table table-hover table-secondary car-table-small">
+            <thead>
+              <tr>
+                <th scope="col"></th>
+                <th scope="col">Year
+                  <arrow class="fa fa-chevron-down"></arrow>
+                </th>
+                <th scope="col">Make
+                  <arrow class="fa fa-chevron-down"></arrow>
+                </th>
+                <th scope="col">Model
+                  <arrow class="fa fa-chevron-down"></arrow>
+                </th>
+                <th scope="col">Milage
+                  <arrow class="fa fa-chevron-down"></arrow>
+                </th>
+                <th scope="col">Cylinder
+                  <arrow class="fa fa-chevron-down"></arrow>
+                </th>
+                <th scope="col">Transmission
+                  <arrow class="fa fa-chevron-down"></arrow>
+                </th>
+                <th scope="col">Price
+                  <arrow class="fa fa-chevron-down"></arrow>
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- <tr>
+                       <td><img src="img/cars/camry-2018-1.jpg"></td>
+                       <td scope="col">audi</td>
+                       <td scope="col">Camry</td>
+                       <td scope="col">2018</td>
+                       <td scope="col">140000</td>
+                       <td scope="col">Automatic</td>
+                       <td scope="col">$5000</td>
+                     </tr>
+                     <tr>
+                       <td><img src="img/cars/camaro-2018-1.jpg"></td>
+                       <td scope="col">Chevy</td>
+                       <td scope="col">Camaro</td>
+                       <td scope="col">2018</td>
+                       <td scope="col">90000</td>
+                       <td scope="col">Automatic</td>
+                       <td scope="col">$15000</td>
+                     </tr> -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- list of availalable services -->
+      <div class="row" id="services">
+        <div class="col-lg-8 col-md-10 mx-auto">
+        </div>
+      </div>
+      <!-- uhaul service form -->
+      <div class="row" id="uhaul">
+        <div class="col-lg-8 col-md-10 mx-auto">
+        </div>
+      </div>
+      <!-- contact us section -->
+      <div class="row" id="about">
+        <div class="col-sm-10 col-md-10 col-lg-10 mx-auto">
+          <h2>About</h2>
+          <p>Location:</p>
+          <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12363.626139958173!2d-86.6082519!3d39.2222884!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x455ceca54124b763!2sideal+auto+sale+and+repair+LLC!5e0!3m2!1sen!2sus!4v1526925674934" frameborder="0" style="border:0" allowfullscreen></iframe>
+          <!-- <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12363.626139958173!2d-86.6082519!3d39.2222884!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x455ceca54124b763!2sideal+auto+sale+and+repair+LLC!5e0!3m2!1sen!2sus!4v1526925674934" width="450" height="450" frameborder="0" style="border:0" allowfullscreen></iframe> -->
+        </div>
+      </div>
+
+      <!-- <div class="col-lg-8 col-md-10 mx-auto col-sm-8 col-md-10 col-lg-8 mx-auto table-responsive"></div> -->
+      <!-- about us section -->
+      <div class="row" id="contact">
+        <div class="col-sm-8 col-md-10 col-lg-8 mx-auto">
+          <h2>Contact Us</h2>
+          <p>Email: idealivycar@gmail.com</p>
+          <p>Phone: (812) 340-1753</p>
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+
+  <hr>
+
+
+  <!-- The Modal/Lightbox -->
+  <div id="lightBoxModal" class="modal">
+    <span class="close cursor" onclick="closeModal()">&times;</span>
+    <div class="modal-content">
+
+      <div class="mySlides">
+        <div class="numbertext">1 / 4</div>
+        <img src="img/cars/prius thumb.jpg" style="width:100%">
+      </div>
+
+      <div class="mySlides">
+        <div class="numbertext">2 / 4</div>
+        <img src="img/cars/accord thumb.jpg" style="width:100%">
+      </div>
+
+      <div class="mySlides">
+        <div class="numbertext">3 / 4</div>
+        <img src="img/cars/audi thumb.jpg" style="width:100%">
+      </div>
+
+      <div class="mySlides">
+        <div class="numbertext">4 / 4</div>
+        <img src="img/cars/camry thumb.jpg" style="width:100%">
+      </div>
+
+      <!-- Next/previous controls -->
+      <!-- <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+      <a class="next" onclick="plusSlides(1)">&#10095;</a> -->
+
+      <!-- Caption text -->
+      <!-- <div class="caption-container">
+        <p id="caption"></p>
+      </div> -->
+
+      <!-- <div class="thumbnails-container">
+        Thumbnail image controls
+        <div class="column">
+          <img class="thumbnails active" src="img/cars/camry thumb.jpg" onclick="currentSlide(1)" alt="Nature">
+        </div>
+
+        <div class="column">
+          <img class="thumbnails" src="img/cars/prius thumb.jpg" onclick="currentSlide(2)" alt="Trolltunga">
+        </div>
+
+        <div class="column">
+          <img class="thumbnails" src="img/cars/accord thumb.jpg" onclick="currentSlide(3)" alt="Mountains">
+        </div>
+
+        <div class="column">
+          <img class="thumbnails" src="img/cars/prius thumb.jpg" onclick="currentSlide(4)" alt="Trolltunga">
+        </div>
+
+        <div class="column">
+          <img class="thumbnails" src="img/cars/accord thumb.jpg" onclick="currentSlide(5)" alt="Mountains">
+        </div>
+
+        <div class="column">
+          <img class="thumbnails" src="img/cars/prius thumb.jpg" onclick="currentSlide(6)" alt="Trolltunga">
+        </div>
+
+        <div class="column">
+          <img class="thumbnails" src="img/cars/accord thumb.jpg" onclick="currentSlide(7)" alt="Mountains">
+        </div>
+
+        <div class="column">
+          <img class="thumbnails" src="img/cars/audi thumb.jpg" onclick="currentSlide(8)" alt="Lights">
+        </div>
+      </div> -->
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <ul class="list-inline text-center">
+            <li class="list-inline-item">
+              <a href="#">
+                <span class="fa-stack fa-lg">
+                  <i class="fa fa-circle fa-stack-2x"></i>
+                  <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                </span>
+              </a>
+            </li>
+            <li class="list-inline-item">
+              <a href="#">
+                <span class="fa-stack fa-lg">
+                  <i class="fa fa-circle fa-stack-2x"></i>
+                  <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                </span>
+              </a>
+            </li>
+            <li class="list-inline-item">
+              <a href="#">
+                <span class="fa-stack fa-lg">
+                  <i class="fa fa-circle fa-stack-2x"></i>
+                  <i class="fa fa-instagram fa-stack-1x fa-inverse"></i>
+                </span>
+              </a>
+            </li>
+          </ul>
+          <p class="copyright text-muted">Copyright &copy; Ideal Auto 2018</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+
+  <script src="js/lightbox.js"></script>
+  <script src="js/generateTable.js"></script>
+
+  <!-- Custom scripts for this template -->
+  <script src="js/clean-blog.js"></script>
+  <script src="js/jquery.scrollTo.min.js"></script>
+
+
+
+</body>
+
+</html>
