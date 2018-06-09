@@ -1,52 +1,61 @@
 var dict = [
-    {
-        "Image": "prius",
-        "OtherImages": [
-            
-        ],
-        "Specs":{
-            "Year": "2006",
-            "Make": "Toyota",
-            "Model": "Prius",
-            "Milage": "135,000",
-            "Transmission": "Auto",
-            "Cylinders": "4"
-        },
-        "Price": "$6750",
-        "Sold": true
-    },
-    {
-        "Image":"accord",
-        "OtherImages": [
-            
-        ],
-        "Specs":{
-            "Year": "2004",
-            "Make": "Honda",
-            "Model": "Accord",
-            "Milage": "175,000",
-            "Transmission": "Auto",
-            "Cylinders": "6"
-        },
-        "Price": "$2500",
-        "Sold": true
-    },
-    {
-        "Image":"audi",
-        "OtherImages": [
-            
-        ],
-        "Specs":{
-            "Year": "2005",
-            "Make": "Audi",
-            "Model": "A6 Quattro",
-            "Milage": "79,000",
-            "Transmission": "Auto",
-            "Cylinders": "6"
-        },
-        "Price": "$8500",
-        "Sold": false
-    }
+	{
+		"Thumb": "img/cars 2/accord/thumb.jpg",
+		"OtherImages": [
+			"img/cars 2/accord/accord (2).jpg",
+			"img/cars 2/accord/accord (4).jpg",
+			"img/cars 2/accord/accord.jpg",
+			"img/cars 2/accord/thumb.jpg"
+		],
+		"Specs": {
+			"Year": "2004",
+			"Make": "Honda",
+			"Model": "Accord",
+			"Milage": "175,000",
+			"Transmission": "Auto",
+			"Cylinders": "6"
+		},
+		"Price": "$2500",
+		"Sold": true
+	},
+	{
+		"Thumb": "img/cars 2/audi/thumb.jpg",
+		"OtherImages": [
+			"img/cars 2/audi/audi (2).jpg",
+			"img/cars 2/audi/audi (3).jpg",
+			"img/cars 2/audi/audi (4).jpg",
+			"img/cars 2/audi/thumb.jpg"
+		],
+		"Specs": {
+			"Year": "2005",
+			"Make": "Audi",
+			"Model": "A6 Quattro",
+			"Milage": "79,000",
+			"Transmission": "Auto",
+			"Cylinders": "6"
+		},
+		"Price": "$8500",
+		"Sold": false
+	},
+	{
+		"Thumb": "img/cars 2/prius/thumb.jpg",
+		"OtherImages": [
+			"img/cars 2/prius/prius (2).jpg",
+			"img/cars 2/prius/prius (4).jpg",
+			"img/cars 2/prius/prius.jpg",
+			"img/cars 2/prius/thumb.jpg"
+		],
+		"Specs": {
+			"Year": "2006",
+			"Make": "Toyota",
+			"Model": "Prius",
+			"Milage": "135,000",
+			"Transmission": "Auto",
+			"Cylinders": "4"
+		},
+		"Price": "$6750",
+		"Sold": true
+	}
 ]
 
 
@@ -75,7 +84,8 @@ function processJSON(jsonData){
             img.setAttribute('onclick', `openModal();currentSlide(${i});`);
             img.className += ' hover-shadow';
             img.className += ' table-thumbnails';
-            img.src = "img/cars/" + car.Image + " thumb.jpg";
+            // img.src = "img/cars/" + car.Image + " thumb.jpg";
+            img.src = car.Thumb;
             td.appendChild(img);
             // make each col in each row
             for (col in car.Specs){
@@ -91,12 +101,13 @@ function processJSON(jsonData){
             if (tname == 'car-table-small') td = tr.insertCell();
         }
         // remove the last empty row 
-        if (tname == 'car-table-small') lastrow.deleteCell(8);
+        // if (tname == 'car-table-small') lastrow.deleteCell(8);
     }
 }
 
 // fillTables('cars');
-fillTables('info');
+// fillTables('info');
 
 
 // processJSON(dict.cars);
+processJSON(dict);

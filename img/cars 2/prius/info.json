@@ -1,9 +1,11 @@
 {
+	"Ignore": false,
 	"Year": "2006",
 	"Make": "Toyota",
 	"Model": "Prius",
 	"Milage": "135,000",
 	"Transmission": "Auto",
 	"Cylinders": "4",
-	"Price": "SOLD!"
+	"Price": "$6750",
+	"Sold": true
 }

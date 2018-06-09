@@ -2,9 +2,11 @@ var fs = require('fs');
 var dir = require('node-dir');
 var nPath = require('path');
 
-var print = function(args){
-    console.log(args);
-}
+var print = args => console.log(args);
+
+String.prototype.toForwardSlash = function() {
+    return this.replace(/\\/g,"/");
+};
 
 // are there args?
 if (process.argv.length <= 2){
@@ -25,41 +27,55 @@ var carDict = [];
 for (i = 0; i < carlist.length; i++){
     var car = carlist[i];
     var fullPath = path+car;
+    // get path of all files for a given car
     var files = dir.files(fullPath,{sync:true});
-
+    // get info.json path for file
     var carInfoPath = String(files.filter(e => e.includes('json')));
     carInfoPath = nPath.parse(carInfoPath);
-    carInfoPath = nPath.join(carInfoPath.dir,carInfoPath.name);
-    carInfoPath = carInfoPath.replace(/\\/g,"/");
+    carInfoPath = nPath.join(carInfoPath.dir, carInfoPath.name);
+    carInfoPath = carInfoPath.toForwardSlash();
     var carInfo = require(carInfoPath);
 
-    files = files.map(s => s = s.substring(path.length-1,s.length));
-    var thumbnail = files.filter(e => e.includes('thumb'));
+    files = files.map(e => e.toForwardSlash());
+    files = files.map(s => s = s.substring(3,s.length));
+    var thumbnail = String(files.filter(e => e.includes('thumb')));
     var otherImgs = files.filter(e => !e.includes('json'));
-
     var newCar = {
         "Thumb": thumbnail,
         "OtherImages":otherImgs,
-        "Year": carInfo.Year,
-        "Make": carInfo.Make,
-        "Model": carInfo.Model,
-        "Milage": carInfo.Milage,
-        "Transmission": carInfo.Transmission,
-        "Cylinders": carInfo.Cylinders,
-        "Price": carInfo.Price
+        "Specs":{
+            "Year": carInfo.Year,
+            "Make": carInfo.Make,
+            "Model": carInfo.Model,
+            "Milage": carInfo.Milage,
+            "Transmission": carInfo.Transmission,
+            "Cylinders": carInfo.Cylinders
+        },
+        "Price": carInfo.Price,
+        "Sold": carInfo.Sold
     };
-
-    carDict.push(newCar);
+    
+    // some cars are to be ignored
+    if(!carInfo.Ignore) carDict.push(newCar);
 }
 
-print(carDict);
+// print(carDict);
 
 // export cars to json file
 var carsInfoPath = "../img/cars 2/info.json";
 fs.writeFileSync(carsInfoPath, JSON.stringify(carDict, null, "\t"));
 
 readme = fs.readFileSync(carsInfoPath, "utf8");
-print(readme);
+// print(readme);
+
+
+
+
+
+
+
+
+
 
 // for (i = 0; i < files.length; i++){
 //     var file = files[i];
