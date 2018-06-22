@@ -72,11 +72,11 @@ function processJSON(jsonData){
     var tables = ['car-table-large','car-table-small'];
     for (tname of tables){
         var tbody = document.getElementsByClassName(tname)[0].children[1];
-        var lastrow;
+        // var lastrow;
         var i = 1;
         for (car of jsonData){
             tr = tbody.insertRow();
-            lastrow = tr;
+            // lastrow = tr;
             // make a new col 
             td = tr.insertCell();
             // image col
@@ -89,12 +89,12 @@ function processJSON(jsonData){
             td.appendChild(img);
             // make each col in each row
             for (col in car.Specs){
-                var info = car.Specs[col];
+                var spec = car.Specs[col];
                 td = tr.insertCell();
-                td.innerHTML = info;
+                td.innerHTML = spec;
             }
             td = tr.insertCell();
-            if (car.Sold) td.innerHTML = "<span class='soldPrice'>"+car.Price+"</span><span class='soldText'> Sold!</span>";
+            if (car.Sold) td.innerHTML = `<span class='soldPrice'>${car.Price}</span><span class='soldText'> Sold!</span>`;
             else td.innerHTML = car.Price;
             i++;
             // make an empty row for small table
@@ -102,7 +102,8 @@ function processJSON(jsonData){
         }
         // remove the last empty row 
         // if (tname == 'car-table-small') lastrow.deleteCell(8);
-    }
+	}
+	
 }
 
 // fillTables('cars');
@@ -111,3 +112,21 @@ function processJSON(jsonData){
 
 // processJSON(dict.cars);
 processJSON(dict);
+
+// "Thumb": "img/cars 2/accord/thumb.jpg",
+// 		"OtherImages": [
+// 			"img/cars 2/accord/accord (2).jpg",
+// 			"img/cars 2/accord/accord (4).jpg",
+// 			"img/cars 2/accord/accord.jpg",
+// 			"img/cars 2/accord/thumb.jpg"
+// 		],
+// 		"Specs": {
+// 			"Year": "2004",
+// 			"Make": "Honda",
+// 			"Model": "Accord",
+// 			"Milage": "175,000",
+// 			"Transmission": "Auto",
+// 			"Cylinders": "6"
+// 		},
+// 		"Price": "$2500",
+// 		"Sold": true

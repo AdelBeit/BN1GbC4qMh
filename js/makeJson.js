@@ -3,6 +3,7 @@ var dir = require('node-dir');
 var nPath = require('path');
 
 var print = args => console.log(args);
+var carsfolder = 'cars 2';
 
 String.prototype.toForwardSlash = function() {
     return this.replace(/\\/g,"/");
@@ -62,7 +63,7 @@ for (i = 0; i < carlist.length; i++){
 // print(carDict);
 
 // export cars to json file
-var carsInfoPath = "../img/cars 2/info.json";
+var carsInfoPath = "../img/" + carsfolder + "/info.json";
 fs.writeFileSync(carsInfoPath, JSON.stringify(carDict, null, "\t"));
 
 readme = fs.readFileSync(carsInfoPath, "utf8");
