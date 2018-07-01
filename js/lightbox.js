@@ -31,9 +31,17 @@ function currentSlide(n) {
   showSlides(slideIndex = n);
 }
 
+function print(args){
+  console.log(args);
+}
+
 function showSlides(n) {
+  
   var i;
   var slides = document.getElementsByClassName("mySlides");
+  var curr_slide = document.getElementsByClassName('current-slide')[0];
+  print(slideIndex-1);
+  print(slides.length);
   // var dots = document.getElementsByClassName("thumbnails");
   // var captionText = document.getElementById("caption");
   if (n > slides.length) {slideIndex = 1}
@@ -41,12 +49,18 @@ function showSlides(n) {
   for (i = 0; i < slides.length; i++) {
     slides[i].style.display = "none";
   }
+  print(slideIndex-1);
+  print(slides.length);
   // for (i = 0; i < dots.length; i++) {
   //   dots[i].className = dots[i].className.replace(" active", "");
   // }
-  slides[slideIndex-1].style.display = "block";
-  // dots[slideIndex-1].className += " active";
-//   captionText.innerHTML = dots[slideIndex-1].alt;
+  // slides[slideIndex-1].style.display = "block";
+  curr_slide.style.display = "block";
+  cur = slides[0];
+  cur = slides[slideIndex-1];
+  print(cur);
+  curr_slide.children[0].src = slides[slideIndex-1].children[0].src;
+
 }
 
 // close modal if it's open 
