@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Ideal Auto</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom fonts for this template -->
+  <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  <link href='vendor/google-fonts/fonts1.css' rel='stylesheet' type='text/css'>
+  <link href='vendor/google-fonts/fonts2.css' rel='stylesheet' type='text/css'>
+
+  <!-- Custom styles for this template -->
+  <link href="css/clean-blog.css" rel="stylesheet">
+  <link href="css/custom.css" rel="stylesheet">
+  <link href="css/lightbox.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+    <div class="container">
+      <!-- LOGO GOES HERE *********** NEED LOGO ************* -->
+      <a class="navbar-brand" href="#"></a>
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+        aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        Menu
+        <i class="fa fa-bars"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="#cars">Cars</a>
+          </li>
+          <!-- <li class="nav-item">
+            <a class="nav-link" href="#services">Services</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#uhaul">Uhaul</a>
+          </li> -->
+          <li class="nav-item">
+            <a class="nav-link" href="#about">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#contact">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+
+  <!-- Main Content -->
+  <div class="container">
+    <div class="main-content">
+
+      <!-- car listings -->
+      <div class="row" id="cars">
+        <div class="table-large col-sm-10 col-md-12 col-lg-12 mx-auto table-responsive">
+          <table class="table table-secondary table-hover car-table-large">
+            <thead>
+              <tr>
+                <th></th>
+                <th>Year
+                  <arrow class="fa fa-chevron-down"></arrow>
+                </th>
+                <th>Make
+                  <arrow class="fa fa-chevron-down"></arrow>
+                </th>
+                <th>Model
+                  <arrow class="fa fa-chevron-down"></arrow>
+                </th>
+                <th>Milage
+                  <arrow class="fa fa-chevron-down"></arrow>
+                </th>
+                <th>Transmission
+                  <arrow class="fa fa-chevron-down"></arrow>
+                </th>
+                <th>Cylinder
+                  <arrow class="fa fa-chevron-down"></arrow>
+                </th>
+                <th>Price
+                  <arrow class="fa fa-chevron-down"></arrow>
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+
+            </tbody>
+          </table>
+        </div>
+
+        <div class="table-small col-sm-12 col-md-10 col-lg-10 mx-auto table-responsive">
+          <!-- <table class="table table-secondary table-hover car-table table-responsive"> -->
+          <table class="table table-hover table-secondary car-table-small">
+            <thead>
+              <tr>
+                <th scope="col"></th>
+                <th scope="col">Year
+                  <arrow class="fa fa-chevron-down"></arrow>
+                </th>
+                <th scope="col">Make
+                  <arrow class="fa fa-chevron-down"></arrow>
+                </th>
+                <th scope="col">Model
+                  <arrow class="fa fa-chevron-down"></arrow>
+                </th>
+                <th scope="col">Milage
+                  <arrow class="fa fa-chevron-down"></arrow>
+                </th>
+                <th scope="col">Cylinder
+                  <arrow class="fa fa-chevron-down"></arrow>
+                </th>
+                <th scope="col">Transmission
+                  <arrow class="fa fa-chevron-down"></arrow>
+                </th>
+                <th scope="col">Price
+                  <arrow class="fa fa-chevron-down"></arrow>
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+
+
+    </div>
+  </div>
+
+
+
+  <!-- The Modal/Lightbox -->
+  <div id="lightBoxModal" class="modal">
+    <span class="close cursor" onclick="closeModal()">&times;</span>
+  </div>
+
+  <hr>
+
+
+  <div id="lightboxModalShadow">
+    <p class="par">hi there im a paragraph.</p>
+    <div class='img'>
+      <img src='https://picsum.photos/200'>
+    </div>
+    <numImages>4</numImages>
+  </div>
+
+  <template id="lightboxModalTemplate">
+    <!-- <link href="css/lightboxShadow.css" rel="stylesheet"> -->
+    <style>
+    </style>
+    <div class="info">
+      <div onclick="paraclass()" class="pardiv">
+        <content select=".par"></content>
+      </div>
+      <div onclick="imgclass()" class='imgdiv'>
+        <content select=".img"></content>
+      </div>
+      <div onclick="makeimgs()" class="makeimgs">
+        <content select="numImages"></content>
+      </div>
+    </div>
+
+
+    <!-- <script src="js/lightboxShadow.js"></script> -->
+    <script>
+      function paraclass() {
+        console.log('whatup paragraph');
+      }
+      function makeimgs(){
+        alert()
+      }
+    </script>
+
+  </template>
+
+  <script>
+    var lightboxshadow = document.getElementById('lightboxModalShadow').createShadowRoot();
+    var template = document.getElementById('lightboxModalTemplate');
+    var clone = document.importNode(template.content, true);
+    lightboxshadow.appendChild(clone);
+  </script>
+
+  <script>
+    function imgclass() {
+      console.log('this is an image');
+    }
+  </script>
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+
+  <script src="js/lightbox.js"></script>
+  <script src="js/generateTable.js"></script>
+
+  <!-- Custom scripts for this template -->
+  <script src="js/clean-blog.js"></script>
+  <script src="js/jquery.scrollTo.min.js"></script>
+
+  
+
+</body>
+
+</html>

@@ -1,55 +1,59 @@
-{ 	"cars": 
-	[
-		{
-			"comment": "prius",
-			"year": "2006",
-			"make": "Toyota",
-			"model": "Prius",
-			"milage": "135000",
-			"transmission": "auto",
-			"price": "6750",
-			"cylinders": "4"
+[
+	{
+		"Thumb": "img/cars 2/accord/thumb.jpg",
+		"OtherImages": [
+			"img/cars 2/accord/accord (2).jpg",
+			"img/cars 2/accord/accord (4).jpg",
+			"img/cars 2/accord/accord.jpg",
+			"img/cars 2/accord/thumb.jpg"
+		],
+		"Specs": {
+			"Year": "2004",
+			"Make": "Honda",
+			"Model": "Accord",
+			"Milage": "175,000",
+			"Transmission": "Auto",
+			"Cylinders": "6"
 		},
-		{
-			"comment":"accord",
-			"year": "2004",
-			"make": "honda",
-			"model": "accord",
-			"milage": "175000",
-			"trans": "auto",
-			"price": "2500",
-			"cylinders": "6"
+		"Price": "$2500",
+		"Sold": true
+	},
+	{
+		"Thumb": "img/cars 2/audi/thumb.jpg",
+		"OtherImages": [
+			"img/cars 2/audi/audi (2).jpg",
+			"img/cars 2/audi/audi (3).jpg",
+			"img/cars 2/audi/audi (4).jpg",
+			"img/cars 2/audi/thumb.jpg"
+		],
+		"Specs": {
+			"Year": "2005",
+			"Make": "Audi",
+			"Model": "A6 Quattro",
+			"Milage": "79,000",
+			"Transmission": "Auto",
+			"Cylinders": "6"
 		},
-		{
-			"comment":"audi",
-			"year": "2005",
-			"make": "audi",
-			"model": "a6 quattro",
-			"milage": "79000",
-			"trans": "auto",
-			"price": "11000",
-			"cylinders": "6"
+		"Price": "$8500",
+		"Sold": false
+	},
+	{
+		"Thumb": "img/cars 2/prius/thumb.jpg",
+		"OtherImages": [
+			"img/cars 2/prius/prius (2).jpg",
+			"img/cars 2/prius/prius (4).jpg",
+			"img/cars 2/prius/prius.jpg",
+			"img/cars 2/prius/thumb.jpg"
+		],
+		"Specs": {
+			"Year": "2006",
+			"Make": "Toyota",
+			"Model": "Prius",
+			"Milage": "135,000",
+			"Transmission": "Auto",
+			"Cylinders": "4"
 		},
-		{
-			"comment": "camry",
-			"year": "1999",
-			"make": "toyota",
-			"model": "camry",
-			"milage": "300000",
-			"trans": "auto",
-			"price": "950",
-			"cylinders": "4"
-		},
-		{
-			"comment": "civic",
-			"year": "2006",
-			"make": "honda",
-			"model": "civic coupe",
-			"milage": "160000",
-			"trans": "auto",
-			"price": "3200",
-			"cylinders": "4"
-		}
-	]
-}
-
+		"Price": "$6750",
+		"Sold": true
+	}
+]

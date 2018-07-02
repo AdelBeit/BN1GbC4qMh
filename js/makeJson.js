@@ -1,106 +1,161 @@
-var dict = 
-{ 	"cars": 
-    [
-        {
-            "Image": "prius",
-            "OtherImages": [
-                
-            ],
-            "Year": "2006",
-            "Make": "Toyota",
-            "Model": "Prius",
-            "Milage": "135,000",
-            "Transmission": "Auto",
-            "Cylinders": "4",
-            "Price": "SOLD!"
-        },
-        {
-            "Image":"accord",
-            "OtherImages": [
-
-            ],
-            "Year": "2004",
-            "Make": "Honda",
-            "Model": "Accord",
-            "Milage": "175,000",
-            "Transmission": "Auto",
-            "Cylinders": "6",
-            "Price": "SOLD!" 
-        },
-        {
-            "Image":"audi",
-            "OtherImages": [
-
-            ],
-            "Year": "2005",
-            "Make": "Audi",
-            "Model": "A6 Quattro",
-            "Milage": "79,000",
-            "Transmission": "Auto",
-            "Cylinders": "6",
-            "Price": "$11000" 
-        },
-        {
-            "Image": "camry",
-            "OtherImages": [
-
-            ],
-            "Year": "1999",
-            "Make": "Toyota",
-            "Model": "Camry",
-            "Milage": "300,000",
-            "Transmission": "Auto",
-            "Cylinders": "4",
-            "Price": "SOLD!"
-        }
-        // },
-        // {
-        //     "Image": "civic",
-        //     "OtherImages": [
-
-        //     ],
-        //     "Year": "2006",
-        //     "Make": "Honda",
-        //     "Model": "Civic Coupe",
-        //     "Milage": "160,000",
-        //     "Transmission": "Auto",
-        //     "Cylinders": "4",
-        //     "Price": "3200"
-        // }
-    ]
-}
-
-
-const fs = require('fs');
+var fs = require('fs');
 var dir = require('node-dir');
-var direct = "./img/cars 2/prius/";
+var nPath = require('path');
 
-// ///////// read
-var carsjson = require('../img/cars 2/prius/info.json')
-// var readme = fs.readFileSync(direct+"info.json", "utf8");
+var print = args => console.log(args);
+var carsfolder = 'cars 2';
 
-///////// modify
-var newcar = {
-    "Image": "prius",
-    "OtherImages": [
-        
-    ],
-    "Year": "1111111111111",
-    "Make": "Toyota",
-    "Model": "Prius",
-    "Milage": "135,000",
-    "Transmission": "Auto",
-    "Cylinders": "4",
-    "Price": "$10000000"
+String.prototype.toForwardSlash = function() {
+    return this.replace(/\\/g,"/");
 };
 
-carsjson.cars.push(newcar);
+// are there args?
+if (process.argv.length <= 2){
+    console.log("Usage: " + __filename + " path/to");
+    process.exit(-1);
+}
 
-// console.log(JSON.stringify(carsjson.cars, null, "\t"));
+// get path from args
+var path = '.';
+path = process.argv[2];
 
-///////// write
-fs.writeFileSync("./cars.json", JSON.stringify(carsjson, null, "\t"));
+// get list of cars
+var carlist = fs.readdirSync(path);
+carlist = carlist.filter(e => !e.includes('.json'));
+
+// make the car json 
+var carDict = [];
+for (i = 0; i < carlist.length; i++){
+    var car = carlist[i];
+    var fullPath = path+car;
+    // get path of all files for a given car
+    var files = dir.files(fullPath,{sync:true});
+    // get info.json path for file
+    var carInfoPath = String(files.filter(e => e.includes('json')));
+    carInfoPath = nPath.parse(carInfoPath);
+    carInfoPath = nPath.join(carInfoPath.dir, carInfoPath.name);
+    carInfoPath = carInfoPath.toForwardSlash();
+    var carInfo = require(carInfoPath);
+
+    files = files.map(e => e.toForwardSlash());
+    files = files.map(s => s = s.substring(3,s.length));
+    var thumbnail = String(files.filter(e => e.includes('thumb')));
+    var otherImgs = files.filter(e => !e.includes('json'));
+    var newCar = {
+        "Thumb": thumbnail,
+        "OtherImages":otherImgs,
+        "Specs":{
+            "Year": carInfo.Year,
+            "Make": carInfo.Make,
+            "Model": carInfo.Model,
+            "Milage": carInfo.Milage,
+            "Transmission": carInfo.Transmission,
+            "Cylinders": carInfo.Cylinders
+        },
+        "Price": carInfo.Price,
+        "Sold": carInfo.Sold
+    };
+    
+    // some cars are to be ignored
+    if(!carInfo.Ignore) carDict.push(newCar);
+}
+
+// print(carDict);
+
+// export cars to json file
+var carsInfoPath = "../img/" + carsfolder + "/info.json";
+fs.writeFileSync(carsInfoPath, JSON.stringify(carDict, null, "\t"));
+
+readme = fs.readFileSync(carsInfoPath, "utf8");
+// print(readme);
 
 
-readme = fs.readFileSync("./cars.json", "utf8");
-console.log(readme);
+
+
+
+
+
+
+
+
+// for (i = 0; i < files.length; i++){
+//     var file = files[i];
+//     file = file.substring(2,file.length);
+//     files[i] = file;
+//     print(file);
+// }
+
+
+
+
+// console.log('files');
+// console.log(files);
+
+
+
+
+
+
+
+
+
+
+// const fs = require('fs');
+// var dir = require('node-dir');
+
+// var direct = "./img/cars 2/prius/";
+
+// fs = dir.files("./img/cars/", function(err, files) {
+//   if (err) throw err;
+//   console.log(files);
+//   return files;
+// });
+
+// console.log(fs);
+
+// write to files
+// fs.open("./img/cars 2/prius/info.txt",'w', fetchInfo);
+
+// function fetchInfo(err,filedata) {
+//     if (err) throw err;
+
+// const fs = require('fs');
+// var dir = require('node-dir');
+// var direct = "./img/cars 2/";
+
+//////// get list of files 
+
+// fs.readdirSync(direct).forEach(file => {
+//     console.log(file);
+// })
+
+
+// // ///////// read
+// var carsjson = require('../img/cars 2/prius/info.json')
+// // var readme = fs.readFileSync(direct+"info.json", "utf8");
+
+// ///////// modify
+// var newcar = {
+//     "Image": "prius",
+//     "OtherImages": [
+        
+//     ],
+//     "Year": "1111111111111",
+//     "Make": "Toyota",
+//     "Model": "Prius",
+//     "Milage": "135,000",
+//     "Transmission": "Auto",
+//     "Cylinders": "4",
+//     "Price": "$10000000"
+// };
+
+// carsjson.cars.push(newcar);
+
+// // console.log(JSON.stringify(carsjson.cars, null, "\t"));
+
+// ///////// write
+// fs.writeFileSync("./cars.json", JSON.stringify(carsjson, null, "\t"));
+
+// readme = fs.readFileSync("./cars.json", "utf8");
+// console.log(readme);
+
