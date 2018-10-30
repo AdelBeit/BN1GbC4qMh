@@ -1,0 +1,23 @@
+#services div{
+  text-align:center;
+}
+#services .icon{
+  margin: 0 auto;
+}
+#services div:nth-child(2) .icon {
+  margin: 30px auto;
+}
+#services{
+  background-color:#c6c9cc;
+}
+#services h2{
+  margin-bottom:20px;
+}
+.service{
+  padding:20px 0;
+  border-left:2px solid #e8e8e8;
+  border-top:2px solid #e8e8e8;
+}
+.first{
+  border-left:none;
+}

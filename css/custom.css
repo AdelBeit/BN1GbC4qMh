@@ -34,6 +34,7 @@ h2{
 
 #cars table{
     margin:0;
+    display:none;
 }
 
 .soldPrice {
@@ -113,6 +114,7 @@ header.masthead {
     
     .table-small, #cars{
         padding:0;
+        display:none;
     }
     
     .table-large{

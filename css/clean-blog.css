@@ -9,7 +9,8 @@ body {
   font-size: 20px;
   color: #212529;
   font-family: 'Lora', 'Times New Roman', serif;
-  background: linear-gradient(#e2e2e2,#d0d0d0c2);
+  /* background: linear-gradient(#e2e2e2,#d0d0d0c2); */
+  background: #e8e8e8;
 }
 
 p {
