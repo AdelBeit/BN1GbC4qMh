@@ -51,9 +51,9 @@ h2{
 
 /* about section */
 #hours{
-    background-color: var(--color4);
-    background-color: rgba(245, 243, 165, 0.8);
-    background-color: #c6c9cc;
+    /* background-color: var(--color4); */
+    /* background-color: rgba(245, 243, 165, 0.8); */
+    /* background-color: #c6c9cc; */
 }
 
 #hours div{
@@ -82,6 +82,11 @@ h2{
 
 #map, #contact{
     text-align: center;
+}
+
+#map{
+    background-color: #c6c9cc;
+    padding-top: 10px;
 }
 
 #map iframe{
