@@ -4,4 +4,4 @@ This website was made for a local auto repair shop to help them grow, besides th
 
 It's fully customized, artisan, fresh outta the oven JS, HTML, and CSS code. Uses Bootstrap, and jQuery. You can also find a hand crafted lightbox and a JS generator to generate a cars table based on JSON data, since it's a static website I never got to add a backend to allow uploading and adding new cars, so they have to be manually added to the JSON sheet. It's also 100% responsive with all device sizes. Give it a whirl!
 
-Later on, I decided to switch to Wix as I felt the overall look of the first verison was underwhelming, Wix just had better looking designs.
+Later on, I decided to switch to Wix as I felt the overall look of the first verison was underwhelming, Wix just had better color schemes.
